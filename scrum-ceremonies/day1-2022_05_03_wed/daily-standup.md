@@ -9,9 +9,10 @@
 - Igår gick jag igenom materialet på kursweb samt fördjupningen delvis.
 - Idag har jag vart med på föreläsning och gjort sprintplanering med gruppen, fortsätter med fördjupningsmaterialet & läserpå om socket.io
 
-### Name 2
+### Liza Grapensparr
 
-Lorem ipsum dolor sit amet
+- Igår läste jag igenom kurswebben (inkl kravspecifikationerna för projektet), skapade repot och började bekanta mig med Vue.
+- Idag har jag deltagit på föreläsningen och vid sprintplaneringen med gruppen. Vi har lagt upp en plan för projektet, fördelat SPs och prioriteringsordning för de uppgifter som ska göras, samt tagit fram kontraktet (team norms) och valt ramverk. Jag fortsätter att läsa på om Vue. 
 
 ### Melvin
 
