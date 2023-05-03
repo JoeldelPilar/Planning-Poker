@@ -16,3 +16,4 @@
 
 ## Underskrivet av
 Joel del Pilar
+Tittie Thomasson
