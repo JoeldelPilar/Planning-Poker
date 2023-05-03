@@ -17,8 +17,9 @@ Lorem ipsum dolor sit amet
 
 Idag har vi arbetat med swimlanes för att ta fram tasks på vad som måste göras. Vi har diskuterat om hur arbetet ska läggas upp, hur många points varje task ska få, vilken prio de har o.s.v. Vi har även pratat om vad vi i gruppen känner att vi behöver öva mer på och i mitt fall är det Vue.
 
-### Name 4
+### Tittie
 
-Lorem ipsum dolor sit amet
+- Igår gick jag igenom Jennis material och började även på fördjupningsmaterialet på linkedIn. Jag började även titta lite på Vue då vi valt att använda detta och det är helt nytt för mig. 
+- Idag var jag först med på lektionspasset, därefter hade vi möte i gruppen och gjorde vår sprintplanering. Och resten av tiden idag kommer jag att använda till att fortsätta sätta mig in i Vue. 
 
 > ⚠️⚠️⚠️ Remember to add a screenshot of today's scrum board to this folder!
