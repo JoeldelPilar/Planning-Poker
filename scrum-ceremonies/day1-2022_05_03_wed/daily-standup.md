@@ -10,7 +10,7 @@ Lorem ipsum dolor sit amet
 Lorem ipsum dolor sit amet
 
 ### Name 3
-Lorem ipsum dolor sit amet
+Melvin Kempe
 
 ### Name 4
 Lorem ipsum dolor sit amet
