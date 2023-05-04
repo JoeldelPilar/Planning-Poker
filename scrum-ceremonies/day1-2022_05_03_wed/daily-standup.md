@@ -16,7 +16,9 @@
 
 ### Melvin
 
-Idag har vi arbetat med swimlanes för att ta fram tasks på vad som måste göras. Vi har diskuterat om hur arbetet ska läggas upp, hur många points varje task ska få, vilken prio de har o.s.v. Vi har även pratat om vad vi i gruppen känner att vi behöver öva mer på och i mitt fall är det Vue.
+- Igår arbetade jag med att kolla igenom material inför kursstarten samt tog kontakt med min grupp.
+- Idag har vi arbetat med swimlanes för att ta fram tasks på vad som måste göras. Vi har diskuterat om hur arbetet ska läggas upp, hur många points varje task     ska få, vilken prio de har o.s.v. Vi har även pratat om vad vi i gruppen känner att vi behöver öva mer på och i mitt fall är det Vue.
+- Jag sitter delvis fast på Vue, men håller på att lära mig det
 
 ### Name 4
 
