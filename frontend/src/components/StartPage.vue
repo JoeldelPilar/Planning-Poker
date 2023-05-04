@@ -1,13 +1,27 @@
 <script setup lang="ts">
+    import router from '@/router';
+import { ref } from 'vue';
+    
+    const username = ref("")
 
+    function connectUser() {
+        console.log("hej");
+        console.log(username.value);
+        
+        if (username.value === "admin") {
+            router.push("/about");
+        } else {
+            return;
+        }
+    }
 </script>
 
 <template>
 <main>
     <div class="user-container">
-        <form>
+        <form @submit.prevent="connectUser()">
             <label for="username-input" class="visually-hidden">Enter username</label>
-            <input type="text" name="username-input" placeholder="Username">
+            <input v-model="username" type="text" name="username-input" placeholder="Username">
             <button type="submit">Join</button>
         </form>
     </div>
