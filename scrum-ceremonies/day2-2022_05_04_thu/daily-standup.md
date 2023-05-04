@@ -3,17 +3,28 @@
 ## Wazzup?
 > Yesterday I…, today I will…, I need help with…, I'm stuck with…, TIL…
 
-### Name 1
-Lorem ipsum dolor sit amet
+### Joel del Pilar
+- Igår var jag med och gjorde sprint plannering och pluggade på om socket.io
+- Arbeta med flödesschema
+- Idag ska jag sätta upp frontend miljö
+- Sätta upp backend miljö
 
-### Name 2
-Lorem ipsum dolor sit amet
+### Liza Grapensparr
+- Igår var jag med och gjorde sprint plannering och
+- Arbeta med flödesschema
+- Mobprogrammera frontend 
 
-### Name 3
-Lorem ipsum dolor sit amet
+### Melvin Kempe
+- Igår var jag med och gjorde sprint plannering och
+- Arbeta med flödesschema
+- Forstätta med VUE-kurs
+- Mobprogrammera frontend 
 
-### Name 4
-Lorem ipsum dolor sit amet
+### Tittie Thomasson
+- Igår var jag med och gjorde sprint plannering och
+- Arbeta med flödesschema
+- Forstätta med VUE-kurs
+- Mobprogrammera frontend
 
 
 > ⚠️⚠️⚠️ Remember to add a screenshot of today's scrum board to this folder!
