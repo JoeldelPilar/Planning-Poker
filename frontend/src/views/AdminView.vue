@@ -1,11 +1,14 @@
 <script setup lang="ts">
+  import { io } from 'socket.io-client';
   import { ref } from 'vue';
   
+  const socket = io();
   const newTaskDescription = ref("")
 
   function addNewTask(event: Event) {
     event.preventDefault();
     console.log(newTaskDescription.value);
+    socket.emit('newTask', newTaskDescription.value);
     newTaskDescription.value = '';
   }
 </script>
@@ -15,7 +18,7 @@
     <form>
       <label for="newTaskInput" class="visually-hidden">Enter a new task</label>
       <input v-model="newTaskDescription" type="text" name="newTaskInput" placeholder="Task description">
-      <button type="submit" @click="addNewTask">Add</button>
+      <button type="submit" @click="addNewTask">Submit task</button>
     </form>
   </div>
 </template>
