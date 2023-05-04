@@ -27,4 +27,5 @@
 - Mobprogrammera frontend
 
 
-> ⚠️⚠️⚠️ Remember to add a screenshot of today's scrum board to this folder!
+> ![image](https://user-images.githubusercontent.com/71075458/236216615-bb8355ca-e712-44db-ba4d-2cddc13d5c16.png)
+
