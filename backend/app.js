@@ -5,8 +5,6 @@ const logger = require('morgan');
 const mongoose = require('mongoose');
 require('dotenv').config();
 
-console.log(process.env); 
-
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 
