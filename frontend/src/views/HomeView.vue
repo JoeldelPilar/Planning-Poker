@@ -1,9 +1,12 @@
 <script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
+import StartPage from '../components/StartPage.vue'
+
+const validate: boolean = true
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    <StartPage />
+    <h1 v-if="validate">hej</h1>
   </main>
 </template>
