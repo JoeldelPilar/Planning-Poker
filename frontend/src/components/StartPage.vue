@@ -9,7 +9,7 @@ import { ref } from 'vue';
         console.log(username.value);
         
         if (username.value === "admin") {
-            router.push("/about");
+            router.push("/admin");
         } else {
             return;
         }
