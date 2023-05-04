@@ -10,9 +10,11 @@
 - Sätta upp backend miljö
 
 ### Liza Grapensparr
-- Igår var jag med och gjorde sprint plannering och
+- Igår var jag med och gjorde sprint plannering och fortsatte lära mig mer om Vue.
 - Arbeta med flödesschema
 - Mobprogrammera frontend 
+- Sätta upp admin routen
+- TIL: Idag fick jag praktisk erfarenhet av Vue och lärde mig hur man kan skicka vidare en användare på sidan vid knapptryck
 
 ### Melvin Kempe
 - Igår var jag med och gjorde sprint plannering och
