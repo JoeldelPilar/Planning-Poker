@@ -5,11 +5,10 @@ import { ref } from 'vue';
     const username = ref("")
 
     function connectUser() {
-        console.log("hej");
         console.log(username.value);
         
         if (username.value === "admin") {
-            router.push("/admin");
+            router.push("/usercard");
         } else {
             return;
         }
