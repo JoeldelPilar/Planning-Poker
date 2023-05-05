@@ -9,7 +9,8 @@
 
 ### Liza Grapensparr
 - Igår var jag med på mobprogrammering och arbeta med admin route i frontend.
-- Idag kommer jag arbeta med admin new task och få det att arbeta ihop med socket.io
+- Idag kommer jag arbeta med att lägga till en ny task i admin-läget och få det att arbeta ihop med socket.io. Jag kommer även uppdatera backend och samla samtliga socket.on/emit i en fil.
+- TIL: Idag har jag lärt mig hur man kan använda komponenter och view filer tillsammans.
 
 ### Melvin Kempe
 - Igår var jag med och mobprogrammerade med teamet och sen forsatte jag plugga på om Vue.
