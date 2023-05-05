@@ -1,12 +1,17 @@
 <script setup lang="ts">
 import StartPage from '../components/StartPage.vue'
-
-const validate: boolean = true
 </script>
 
 <template>
-  <main>
+  <main class="main-container">
     <StartPage />
-    <h1 v-if="validate">hej</h1>
   </main>
 </template>
+
+<style scoped>
+.main-container {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+</style>
