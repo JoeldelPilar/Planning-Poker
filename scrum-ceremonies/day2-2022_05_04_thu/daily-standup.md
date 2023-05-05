@@ -17,13 +17,13 @@
 - TIL: Idag fick jag praktisk erfarenhet av Vue och lärde mig hur man kan skicka vidare en användare på sidan vid knapptryck
 
 ### Melvin Kempe
-- Igår var jag med och gjorde sprint plannering och
+- Igår var jag med och gjorde sprint plannering och diskuterade hur arbetet skulle utföras. Jag pluggade också på om Vue och hur man arbetar med det. 
 - Arbeta med flödesschema
 - Forstätta med VUE-kurs
 - Mobprogrammera frontend 
 
 ### Tittie Thomasson
-- Igår var jag med och gjorde sprint plannering och
+- Igår var jag med och gjorde sprint plannering och 
 - Arbeta med flödesschema
 - Forstätta med VUE-kurs
 - Mobprogrammera frontend
