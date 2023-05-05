@@ -23,7 +23,7 @@
 - Mobprogrammera frontend 
 
 ### Tittie Thomasson
-- Igår var jag med och gjorde sprint plannering och 
+- Igår var jag med och gjorde sprint plannering och fortsatte sedan att sätta mig in i Vue.
 - Arbeta med flödesschema
 - Forstätta med VUE-kurs
 - Mobprogrammera frontend

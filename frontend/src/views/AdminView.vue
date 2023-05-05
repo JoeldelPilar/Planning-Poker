@@ -1,13 +1,11 @@
 <script setup lang="ts">
-  import { io } from 'socket.io-client';
+  import { socket } from '@/socket';
   import { ref } from 'vue';
   
-  const socket = io();
   const newTaskDescription = ref("")
 
   function addNewTask(event: Event) {
     event.preventDefault();
-    console.log(newTaskDescription.value);
     socket.emit('newTask', newTaskDescription.value);
     newTaskDescription.value = '';
   }
