@@ -1,0 +1,45 @@
+<script setup lang="ts">
+  import { io } from 'socket.io-client';
+  import { ref } from 'vue';
+  
+  const socket = io();
+  const newTaskDescription = ref("")
+
+  function addNewTask(event: Event) {
+    event.preventDefault();
+    console.log(newTaskDescription.value);
+    socket.emit('newTask', newTaskDescription.value);
+    newTaskDescription.value = '';
+  }
+</script>
+
+<template>
+  <div class="addTaskForm">
+    <form>
+      <label for="newTaskInput" class="visually-hidden">Enter a new task</label>
+      <input v-model="newTaskDescription" type="text" name="newTaskInput" placeholder="Task description">
+      <button type="submit" @click="addNewTask">Submit task</button>
+    </form>
+  </div>
+</template>
+  
+<style>
+  .addTaskForm {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .visually-hidden {
+    position: absolute;
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0,0,0,0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+  }
+</style>
