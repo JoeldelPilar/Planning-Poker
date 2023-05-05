@@ -19,5 +19,6 @@
 - Igår var jag med och mobprogrammerade med teamet och satte upp DB i atlas samt skapade connection i backend. Har också arbetat vidare med Vue. 
 - Idag ska jag skapa mongoose schema och skapa en test-fil, se så att det fungerar ihop. Kommer också titta mer på socket.io(research).
 
+![bild](https://user-images.githubusercontent.com/103323456/236414625-05e115f6-6a4a-475b-b298-a8555e321366.png)
 
-> ⚠️⚠️⚠️ Remember to add a screenshot of today's scrum board to this folder!
+
