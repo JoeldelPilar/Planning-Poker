@@ -3,17 +3,21 @@
 ## Wazzup?
 > Yesterday I…, today I will…, I need help with…, I'm stuck with…, TIL…
 
-### Name 1
-Lorem ipsum dolor sit amet
+### Joel del Pilar
+- Igår satte jag upp front och backend miljöerna och läste på om socket.io med Vue, mobprogrammerade med teamet.
+- Idag ska jag rensa bort boilerplate kod i frontend och backend.
 
-### Name 2
-Lorem ipsum dolor sit amet
+### Liza Grapensparr
+- Igår var jag med på mobprogrammering och arbeta med admin route i frontend.
+- Idag kommer jag arbeta med admin new task och få det att arbeta ihop med socket.io
 
-### Name 3
-Lorem ipsum dolor sit amet
+### Melvin Kempe
+- Igår var jag med och mobprogrammerade med teamet och sen forsatte jag plugga på om Vue.
+- Idag kommer jag börja med user card - komponenten och titta mer på vue.
 
-### Name 4
-Lorem ipsum dolor sit amet
+### Tittie Thomasson
+- Igår var jag med och mobprogrammerade med teamet och satte upp DB i atlas samt skapade connection i backend. Har också arbetat vidare med Vue. 
+- Idag ska jag skapa mongoose schema och skapa en test-fil, se så att det fungerar ihop. Kommer också titta mer på socket.io(research).
 
 
 > ⚠️⚠️⚠️ Remember to add a screenshot of today's scrum board to this folder!
