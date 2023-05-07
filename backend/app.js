@@ -12,7 +12,15 @@ const tasksRouter = require('./routes/tasks');
 const app = express();
 
 const server = require('http').Server(app);
-const io = require('socket.io')(server);
+
+const io = require('socket.io')(server, {
+  cors: {
+    origin: '*',
+    methods: ['GET', 'POST'],
+  },
+});
+
+const socket = require('./socket')(io);
 
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
 
@@ -26,6 +34,7 @@ db.on('error', err => {
   console.error('connection error:', err);
 });
 
+
 app.use(cors());
 app.use(logger('dev'));
 app.use(express.json());
@@ -35,13 +44,5 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/tasks', tasksRouter);
-
-io.on('connection', function (socket) {
-  console.log('user connected')
-
-  socket.on('disconnect', function () {
-    console.log('user disconnected')
-  })
-});
 
 module.exports = { app: app, server: server };
