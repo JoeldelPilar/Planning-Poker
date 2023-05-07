@@ -6,7 +6,29 @@
 
   function addNewTask(event: Event) {
     event.preventDefault();
-    socket.emit('newTask', newTaskDescription.value);
+
+    const newTask = {
+      task: newTaskDescription.value,
+      storyPoints: 0,
+      deleted: false,
+    };
+
+    fetch('http://localhost:3000/tasks/add', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newTask),
+    })
+    .then(response => response.json())
+    .then(task => {
+      console.log('New task added:', task);
+      socket.emit('newTask', task.task);
+    })
+    .catch(error => {
+      console.error('Error adding new task:', error);
+    });
+
     newTaskDescription.value = '';
   }
 </script>
