@@ -24,4 +24,5 @@
 
 
 
-> ⚠️⚠️⚠️ Remember to add a screenshot of today's scrum board to this folder!
+![bild](https://user-images.githubusercontent.com/103323456/236826427-d3cbfceb-1068-458a-964b-77e0d511a26a.png)
+
