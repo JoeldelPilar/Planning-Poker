@@ -8,6 +8,7 @@ function socket(io) {
 
     socket.on('newTask', (newTaskDescription) => {
       console.log(`New task: ${newTaskDescription}`);
+      socket.emit('updateList');
     });
   });
 }
