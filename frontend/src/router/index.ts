@@ -18,7 +18,7 @@ const router = createRouter({
     },
     {
       path: '/usercard',
-      name: 'usercard',
+      name: 'userview',
       component: UserView
     }
   ]

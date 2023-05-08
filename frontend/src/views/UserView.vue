@@ -11,5 +11,11 @@
 </template>
 
 <style scoped>
-   
+   ul {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 15%;
+   }
 </style>

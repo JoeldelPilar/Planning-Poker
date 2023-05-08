@@ -8,9 +8,9 @@ import { ref } from 'vue';
         console.log(username.value);
         
         if (username.value === "admin") {
-            router.push("/usercard");
+            router.push("/admin");
         } else {
-            return;
+            router.push("/usercard");
         }
     }
 </script>
