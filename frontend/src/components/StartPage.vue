@@ -1,17 +1,23 @@
 <script setup lang="ts">
 import router from '@/router'
+import { userState } from '@/sockets/userSocket'
+import { socket } from '@/socket'
 import { ref } from 'vue'
 
 const username = ref('')
+const msgToUser = ref('')
 
 function connectUser() {
-  console.log(username.value)
-
+  if (!username.value) {
+    msgToUser.value = 'Enter a user name'
+    return
+  }
   if (username.value === 'admin') {
     router.push('/admin')
   } else {
-    return
+    socket.emit('user-join', username.value)
   }
+  console.log('state: ', userState.users)
 }
 </script>
 
@@ -23,6 +29,7 @@ function connectUser() {
       <input v-model="username" type="text" name="username-input" placeholder="Username" />
       <button type="submit">Join</button>
     </form>
+    <span>{{ msgToUser }}</span>
   </section>
 </template>
 
