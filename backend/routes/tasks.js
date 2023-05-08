@@ -15,7 +15,6 @@ router.get('/', async(_req, res) => {
   }
 });
 
-
 router.post('/add', async(req, res) => {
   try {
     const task = await TaskModel.create(req.body);
@@ -23,6 +22,15 @@ router.post('/add', async(req, res) => {
     }
    catch (error) {
       res.status(400).json(error);
+  }
+});
+
+router.put('/:documentId', async(req, res) => {
+  try {
+    const task = await TaskModel.findByIdAndUpdate(req.params.documentId, { $set: { storyPoints: req.body.storyPoints }});
+    res.status(200).json(task);
+  } catch (error) {
+    res.status(400).json(error);
   }
 });
 

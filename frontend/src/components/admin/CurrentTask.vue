@@ -10,10 +10,31 @@
   }
 
   const nextTask = ref<Task|null>(null);
+  const selectedStoryPoints = ref<number>(1);
   
   socket.on('displayNextTask', (task) => {
     nextTask.value = task;
   })
+
+  function setStoryPoints(points: number): void {
+    selectedStoryPoints.value = points;
+  }
+
+  function saveStoryPoints() {
+    const taskId = nextTask.value?._id;
+    
+    fetch(`http://localhost:3000/tasks/${taskId}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ storyPoints: selectedStoryPoints.value }),
+    })
+    .then(() => {
+      console.log('Task updated successfully')
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+  }
 </script>
 
 <template>
@@ -22,13 +43,13 @@
     <h3>{{ nextTask?.task }}</h3>
     <div v-if="nextTask">
       <div class="optionButtons">
-        <button>1</button>
-        <button>3</button>
-        <button>5</button>
-        <button>8</button>
+        <button @click="setStoryPoints(1)">1</button>
+        <button @click="setStoryPoints(3)">3</button>
+        <button @click="setStoryPoints(5)">5</button>
+        <button @click="setStoryPoints(8)">8</button>
         <button>?</button>
       </div>
-      <button>Save</button>
+      <button @click="saveStoryPoints">Save</button>
     </div>
     <div v-else>
       <p>Start the voting by displaying the first task</p>
