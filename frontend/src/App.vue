@@ -6,11 +6,16 @@ import { RouterLink, RouterView } from 'vue-router'
   <header>
     <nav>
       <RouterLink to="/">Start</RouterLink>
-      <RouterLink to="/admin">Anppdmin</RouterLink>
+      <RouterLink to="/admin">Admin</RouterLink>
     </nav>
   </header>
 
   <RouterView />
 </template>
 
-<style scoped></style>
+<style>
+body {
+  font-family: Inter;
+  background-color: #3f3f3f;
+}
+</style>
