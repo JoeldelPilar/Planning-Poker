@@ -13,7 +13,9 @@
 - Idag planerar jag att bli klar med listan och sorteringen, samt att admin ska kunna skicka en task för omröstning.
 
 ### Melvin Kempe
-
+- I fredags arbetade jag tillsammans med de andra med demo och retro. Sedan mobprogrammerade vi tillsammans vid usercard delen.
+- Idag ska jag tillsammans med de andra i gruppen arbeta med den nya sprintplaneringen, fortsätta med userdelen samt fortsätta plugga på Vue.
+- Sitter inte fast just nu. Ska försöka lösa usercard delen själv.
 
 ### Tittie Thomasson
 
