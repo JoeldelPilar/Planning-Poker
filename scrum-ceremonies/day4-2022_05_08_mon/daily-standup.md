@@ -18,6 +18,9 @@
 - Sitter inte fast just nu. Ska försöka lösa usercard delen själv.
 
 ### Tittie Thomasson
+- I fredags hade vi demo och retro, sedan mobprogrammerade vi. Jag har även skapat ett mongoose schema och gjort en rest-fil för att kunna testa så att det funkade att skicka och ta emot från databasen. 
+- Idag ska vi göra en ny sprintplanering och därefter ska jag börja med att skapa en komponent med kortet som ska visa resultatet från röstningen. 
+- Har inget jag sitter fast med just nu.  
 
 
 
