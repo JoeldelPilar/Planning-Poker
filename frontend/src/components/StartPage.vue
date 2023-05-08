@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 import router from '@/router'
 import { userState } from '@/sockets/userSocket'
 import { socket } from '@/socket'
@@ -9,7 +8,8 @@ const username = ref('')
 const msgToUser = ref('')
 
 function connectUser() {
-  if (!username.value) {
+  const usernameRegex = /^[a-zA-Z]+$/
+  if (!usernameRegex.test(username.value)) {
     msgToUser.value = 'Enter a user name'
     return
   }
@@ -17,11 +17,10 @@ function connectUser() {
     router.push('/admin')
   } else {
     socket.emit('user-join', username.value)
-    router.push("/usercard");
+    router.push('/usercard')
   }
   console.log('state: ', userState.users)
 }
-
 </script>
 
 <template>

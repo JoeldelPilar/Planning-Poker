@@ -19,7 +19,6 @@ function socket(io) {
       io.emit('user-join', users)
     });
 
-
     socket.on('nextTask', (nextTask) => {
       socket.emit('displayNextTask', nextTask);
       console.log(nextTask);
