@@ -25,4 +25,8 @@
     margin-top: 15%;
    }
 
+   aside {
+    display: flex;
+    justify-content: end;
+   }
 </style>
