@@ -10,6 +10,7 @@ function socket(io) {
 
     socket.on('newTask', (newTaskDescription) => {
       console.log(`New task: ${newTaskDescription}`);
+      socket.emit('updateList');
     });
 
     socket.on('user-join', (userName) => {
@@ -17,6 +18,12 @@ function socket(io) {
       console.log(`user joined: ${userName}`);
       io.emit('user-join', users)
     });
+
+
+    socket.on('nextTask', (nextTask) => {
+      socket.emit('displayNextTask', nextTask);
+      console.log(nextTask);
+    })
 
   });
 }

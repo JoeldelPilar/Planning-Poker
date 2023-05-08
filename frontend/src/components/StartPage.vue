@@ -1,4 +1,5 @@
 <script setup lang="ts">
+
 import router from '@/router'
 import { userState } from '@/sockets/userSocket'
 import { socket } from '@/socket'
@@ -16,9 +17,11 @@ function connectUser() {
     router.push('/admin')
   } else {
     socket.emit('user-join', username.value)
+    router.push("/usercard");
   }
   console.log('state: ', userState.users)
 }
+
 </script>
 
 <template>
