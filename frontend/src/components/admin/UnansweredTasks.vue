@@ -50,6 +50,14 @@
     localStorage.setItem('taskOrder', JSON.stringify(tasksArray.value.map((task: Task) => task._id)));
   }
 
+  function displayNextTask() {
+    socket.emit('nextTask', tasksArray.value[0])
+  }
+
+  socket.on('displayNextTask', () => {
+    tasksArray.value.splice(0, 1);
+  })
+
   socket.on('updateList', () => {
     fetchTasks();
   });
@@ -78,6 +86,9 @@
         </div>
       </li>
     </ul>
+    <div class="adminCenter">
+      <button @click="displayNextTask" class="nextTaskButton">Display next task</button>
+    </div>
   </div>
 </template>
 
@@ -119,5 +130,9 @@
 
   .taskOrder button {
     margin: 0px 10px;
+  }
+
+  .nextTaskButton {
+    margin: auto;
   }
 </style>

@@ -10,6 +10,11 @@ function socket(io) {
       console.log(`New task: ${newTaskDescription}`);
       socket.emit('updateList');
     });
+
+    socket.on('nextTask', (nextTask) => {
+      socket.emit('displayNextTask', nextTask);
+      console.log(nextTask);
+    })
   });
 }
 
