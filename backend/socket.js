@@ -1,4 +1,5 @@
-let users = []
+let users = [];
+let votes = [];
 
 function socket(io) {
   io.on('connection', function (socket) {
@@ -23,6 +24,14 @@ function socket(io) {
     socket.on('nextTask', (nextTask) => {
       socket.emit('displayNextTask', nextTask);
       console.log(nextTask);
+    })
+
+    socket.on('vote', (data) => {
+      console.log(data.storyPoints);
+      votes.push(data.storyPoints);
+      const average = votes.reduce((acc, curr) => acc + curr, 0) / votes.length;
+      console.log("medeltal till frontend" + average);
+      io.emit('average', average);
     })
 
   });
