@@ -37,6 +37,9 @@ function socket(io) {
       }
     });
 
+    socket.on('returnCurrentQuestion', (currentTask) => {
+      socket.emit('returnQuestionToList', currentTask)
+    })
   });
 }
 
