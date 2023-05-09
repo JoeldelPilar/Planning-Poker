@@ -22,18 +22,22 @@
 
   function saveStoryPoints() {
     const taskId = nextTask.value?._id;
-    
-    fetch(`http://localhost:3000/tasks/${taskId}`, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ storyPoints: selectedStoryPoints.value }),
-    })
-    .then(() => {
-      console.log('Task updated successfully')
-    })
-    .catch(error => {
-      console.error('Error:', error);
-    });
+
+    if (selectedStoryPoints.value === 0) {
+      socket.emit('returnCurrentQuestion', nextTask.value);
+    } else {
+      fetch(`http://localhost:3000/tasks/${taskId}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ storyPoints: selectedStoryPoints.value }),
+      })
+      .then(() => {
+        console.log('Task updated successfully')
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+    }
   }
 </script>
 
@@ -47,7 +51,7 @@
         <button @click="setStoryPoints(3)">3</button>
         <button @click="setStoryPoints(5)">5</button>
         <button @click="setStoryPoints(8)">8</button>
-        <button>?</button>
+        <button @click="setStoryPoints(0)">?</button>
       </div>
       <button @click="saveStoryPoints">Save</button>
     </div>
