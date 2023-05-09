@@ -3,6 +3,7 @@
   import CurrentTask from '../components/admin/CurrentTask.vue'
   import UnansweredTasks from '../components/admin/UnansweredTasks.vue'
   import AnsweredTasks from '../components/admin/AnsweredTasks.vue'
+  import AverageResult from '@/components/AverageResult.vue'
 </script>
 
 <template>
@@ -13,6 +14,7 @@
       <UnansweredTasks />
       <AnsweredTasks />
     </div>
+    <AverageResult />
   </main>
 </template>
 
