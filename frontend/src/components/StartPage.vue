@@ -10,7 +10,7 @@ const msgToUser = ref('')
 function connectUser() {
   const usernameRegex = /^[a-zA-Z]+$/
   if (!usernameRegex.test(username.value)) {
-    msgToUser.value = 'Enter a user name'
+    msgToUser.value = 'Enter a user name, letters a-z.'
     return
   }
   if (username.value === 'admin') {
