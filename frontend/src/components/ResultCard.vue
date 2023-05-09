@@ -15,7 +15,7 @@
 
 <template>
     <div class="result-card">
-        <h3>Resultat</h3>
+        <h3>Result</h3>
         <span>{{ averageNumber }}</span>
     </div>
 </template>
