@@ -27,13 +27,23 @@ function socket(io) {
       console.log(nextTask);
     });
 
-    socket.on("vote", (vote) => {
-      console.log("röstning" + vote);
-      const voteToNumber = Number(vote);
-      votes.push(voteToNumber);
-      console.log("votes" + votes);
+    socket.on("vote", (data) => {
+      console.log("användare" + data.user);
+      console.log("tal" + data.vote);
 
-      if (votes.length > 2) {
+      const voteToNumber = Number(data.vote);
+      votes.push(voteToNumber);
+
+      const user = users.find((user) => user.name === data.user);
+      if (user) {
+        user.storyPoints = data.vote;
+        console.log(users);
+      }
+
+      const usersThatVoted = users.filter(user => user.storyPoints !== "");
+      console.log(usersThatVoted);
+
+      if (votes.length === usersThatVoted.length) {
           calculateAverage(votes, io)
       }
     });
