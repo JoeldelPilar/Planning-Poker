@@ -13,7 +13,9 @@
 - Idag planerar jag att fortsätta med uppdatering av databasen och påbörja arbetet med att lista de tasks som det redan har röstats om.
 
 ### Melvin Kempe
-Lorem ipsum dolor sit amet
+- Igår hade vi en sprintplanering för veckan där vi uppdaterade backlogen, tog fram nya tasks som behöver göras och satt poäng på dom. Jag uppdaterade också stylingen för usercard delen samt lade till TypeScript och Vue kod för att kunna läsa av värdet i kortet.
+- Idag ska jag fortsätta med usercard delen för att få in vilken task som varje user ska rösta på. Ska även fortsätta kolla vidare på Vue.
+- Behöver möjligtvis hjälp med det men ska försöka lösa det själv. 
 
 ### Tittie Thomasson
 - Igår hade vi sprintplanering. Efter det gjorde jag en komponent för röstkortet och därefter började jag jobba på en funktion för att kunna räkna ut medeltalet och avrunda till närmsta fibonaccital.
