@@ -1,24 +1,32 @@
 <script setup lang="ts">
+import { socket } from '@/socket';
+
+    const signedInUser = localStorage.getItem("user")
+    console.log("signedInUser", signedInUser)
+
     const fibonacci = defineProps ({
         fibonacciValue: String
     })
 
     function readCardValue() {
         console.log(fibonacci.fibonacciValue);
+        const vote = fibonacci.fibonacciValue
+        console.log("vote", vote)
+        socket.emit('vote', vote);
     }
 </script>
 
 <template>
-    <li 
+    <button 
         class="optionCard"
         @click.prevent="readCardValue()"
         ><span>{{ fibonacci.fibonacciValue }}</span>
-    </li>
+    </button>
 </template>
 
 <style scoped>
-   li {
-        transition: all 0.4s ease-in-out;
+   button {
+        transition: all 0.2s ease-in-out;
         width: 150px;
         height: 200px;
         border-radius: 10px;
@@ -29,12 +37,19 @@
         text-align: center;
         line-height: 200px;
         font-size: 2rem;
+        border: none;
    }
 
-   li:hover {
-        transition: all 0.4s ease-in-out;
+   button:hover {
+        transition: all 0.2s ease-in-out;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 10px 25px;
         cursor: pointer;
         margin-top: -5px;
+   }
+
+   button:disabled {
+        background-color: rgb(190, 190, 190);
+        cursor:not-allowed;
+        margin-top: 0;
    }
 </style>
