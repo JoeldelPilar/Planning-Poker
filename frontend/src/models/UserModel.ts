@@ -1,5 +1,6 @@
 export default class User {
   constructor(
-    public name: string,
+    public name: String,
+    public storyPoints: String = ''
   ){}
 }
