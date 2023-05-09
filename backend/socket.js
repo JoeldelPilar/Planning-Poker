@@ -24,6 +24,9 @@ function socket(io) {
       console.log(nextTask);
     })
 
+    socket.on('returnCurrentQuestion', (currentTask) => {
+      socket.emit('returnQuestionToList', currentTask)
+    })
   });
 }
 
