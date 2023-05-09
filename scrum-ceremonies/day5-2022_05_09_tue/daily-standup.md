@@ -9,7 +9,8 @@
 - Jag fräschade upp mina kunskaper om RegEX.
 
 ### Liza Grapensparr
-Lorem ipsum dolor sit amet
+- Igår hade vi sprintplanering där vi uppdaterade vår backlog, prioriteringsordningen och story points. Jag blev även klar med listan över tasks att rösta om och att skicka nästa fråga för omröstning. Jag påbörjade även arbetet med att uppdatera tasks i databasen utefter vilken story point som admin tilldelar uppgiften. Jag har dock insett att jag behövde mer tid än vad som tilldelats denna uppgift och tar upp detta med gruppen.
+- Idag planerar jag att fortsätta med uppdatering av databasen och påbörja arbetet med att lista de tasks som det redan har röstats om.
 
 ### Melvin Kempe
 Lorem ipsum dolor sit amet
