@@ -3,17 +3,21 @@
 ## Wazzup?
 > Yesterday I…, today I will…, I need help with…, I'm stuck with…, TIL…
 
-### Name 1
+### Joel del Pilar 
+- Igår deltog jag vid veckans sprintplannering och standup. Jag arbetade vidare med min uppgift som berörde logiken för första sidan.
+- Idag ska jag göra klart det sista på uppgiften, men behöver råd om hur jag ska göra med LS. Sedan kommer jag plocka nästa task att göra ur backlogen.
+- Jag fräschade upp mina kunskaper om RegEX.
+
+### Liza Grapensparr
 Lorem ipsum dolor sit amet
 
-### Name 2
+### Melvin Kempe
 Lorem ipsum dolor sit amet
 
-### Name 3
-Lorem ipsum dolor sit amet
+### Tittie Thomasson
+- Igår hade vi sprintplanering. Efter det gjorde jag en komponent för röstkortet och därefter började jag jobba på en funktion för att kunna räkna ut medeltalet och avrunda till närmsta fibonaccital.
+- Idag kommer jag fortsätta med funktionen för medelvärdet och sen plocka en ny uppgift.  
 
-### Name 4
-Lorem ipsum dolor sit amet
 
 
 > ⚠️⚠️⚠️ Remember to add a screenshot of today's scrum board to this folder!
