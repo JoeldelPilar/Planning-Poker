@@ -10,9 +10,12 @@
   }
 
   const nextTask = ref<Task|null>(null);
-  const selectedStoryPoints = ref<number>(1);
+  const selectedStoryPoints = ref<number|null>(null);
+  const showResult = ref<boolean>(false);
   
   socket.on('displayNextTask', (task) => {
+    showResult.value = false;
+    selectedStoryPoints.value = null;
     nextTask.value = task;
   })
 
@@ -25,6 +28,7 @@
 
     if (selectedStoryPoints.value === 0) {
       socket.emit('returnCurrentQuestion', nextTask.value);
+      showResult.value = true;
     } else {
       fetch(`http://localhost:3000/tasks/${taskId}`, {
         method: 'PUT',
@@ -32,7 +36,7 @@
         body: JSON.stringify({ storyPoints: selectedStoryPoints.value }),
       })
       .then(() => {
-        console.log('Task updated successfully')
+        showResult.value = true;
       })
       .catch(error => {
         console.error('Error:', error);
@@ -44,16 +48,22 @@
 <template>
   <div class="currentTasksContainer">
     <h2>Current task:</h2>
-    <h3>{{ nextTask?.task }}</h3>
     <div v-if="nextTask">
-      <div class="optionButtons">
-        <button @click="setStoryPoints(1)">1</button>
-        <button @click="setStoryPoints(3)">3</button>
-        <button @click="setStoryPoints(5)">5</button>
-        <button @click="setStoryPoints(8)">8</button>
-        <button @click="setStoryPoints(0)">?</button>
+      <div v-if="!showResult">
+        <h3>{{ nextTask.task }}</h3>
+        <div class="optionButtons">
+          <button :class="{ activeOption: selectedStoryPoints === 1 }" @click="setStoryPoints(1)">1</button>
+          <button :class="{ activeOption: selectedStoryPoints === 3 }" @click="setStoryPoints(3)">3</button>
+          <button :class="{ activeOption: selectedStoryPoints === 5 }" @click="setStoryPoints(5)">5</button>
+          <button :class="{ activeOption: selectedStoryPoints === 8 }" @click="setStoryPoints(8)">8</button>
+          <button :class="{ activeOption: selectedStoryPoints === 0 }" @click="setStoryPoints(0)">?</button>
+        </div>
+        <button @click="saveStoryPoints">Save</button>
       </div>
-      <button @click="saveStoryPoints">Save</button>
+      <div v-if="showResult">
+        <p v-if="selectedStoryPoints !== 0">Your vote has been saved</p>
+        <p v-if="selectedStoryPoints === 0">The task was returned to the voting backlog</p>
+      </div>
     </div>
     <div v-else>
       <p>Start the voting by displaying the first task</p>
@@ -75,5 +85,9 @@
     gap: 10px;
     justify-content: center;
     margin: 10px;
+  }
+
+  .activeOption {
+    background-color: #A6F4FF;
   }
 </style>
