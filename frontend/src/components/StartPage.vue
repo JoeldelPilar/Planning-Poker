@@ -1,7 +1,6 @@
 <script setup lang="ts">
-
 import router from '@/router'
-import { userState } from '@/sockets/userSocket'
+import User from '@/models/UserModel'
 import { socket } from '@/socket'
 import { ref } from 'vue'
 
@@ -9,19 +8,23 @@ const username = ref('')
 const msgToUser = ref('')
 
 function connectUser() {
-  if (!username.value) {
-    msgToUser.value = 'Enter a user name'
+  //Vill vi kolla om localStorage har ett användarnamn och direkt pusha till user sidan?
+  const usernameRegex = /^[a-zA-Z]+$/
+
+  if (!usernameRegex.test(username.value)) {
+    msgToUser.value = 'Enter a user name, letters a-z.'
     return
   }
   if (username.value === 'admin') {
     router.push('/admin')
   } else {
-    socket.emit('user-join', username.value)
-    router.push("/usercard");
+    const user = new User(username.value)
+    socket.emit('user-join', user)
+    router.push('/usercard')
   }
-  console.log('state: ', userState.users)
-}
 
+  localStorage.setItem('user', username.value)
+}
 </script>
 
 <template>
