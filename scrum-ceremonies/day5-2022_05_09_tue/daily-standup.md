@@ -22,5 +22,7 @@
 - Idag kommer jag fortsätta med funktionen för medelvärdet och sen plocka en ny uppgift.  
 
 
+### Sprint förmiddag:
 
-> ⚠️⚠️⚠️ Remember to add a screenshot of today's scrum board to this folder!
+![bild](https://user-images.githubusercontent.com/103323456/237032273-b11cd6d3-39bc-4272-ae05-e6144599d18f.png)
+
