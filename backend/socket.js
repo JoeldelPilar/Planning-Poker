@@ -13,9 +13,9 @@ function socket(io) {
       socket.emit('updateList');
     });
 
-    socket.on('user-join', (userName) => {
-      users.push(userName);
-      console.log(`user joined: ${userName}`);
+    socket.on('user-join', (user) => {
+      users.push(user);
+      console.log(users);
       io.emit('user-join', users)
     });
 
