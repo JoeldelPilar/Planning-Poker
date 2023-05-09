@@ -28,7 +28,7 @@ function socket(io) {
     });
 
     socket.on("vote", (data) => {
-      console.log(data.storyPoints);
+      console.log("röstning" + data);
       votes.push(data.storyPoints);
       console.log("votes" + votes);
 

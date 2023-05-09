@@ -2,7 +2,7 @@
     import { socket } from '@/socket'
     import { ref } from 'vue';
 
-    socket.emit('vote', { user: "erik", storyPoints: 8 });
+    // socket.emit('vote', { user: "erik", storyPoints: 8 });
 
     let averageNumber = ref<number|null>(null);
 
