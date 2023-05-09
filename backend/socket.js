@@ -11,6 +11,8 @@ function socket(io) {
         const userIndex = users.findIndex(user => user.id === socket.id)
         users.splice(userIndex, 1)
         console.log(users)
+        //Send back updated users-list to connected clients.
+        io.emit('user-join', users)
       }
     });
 
