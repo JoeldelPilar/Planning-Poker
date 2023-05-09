@@ -23,13 +23,14 @@ function socket(io) {
     });
 
     socket.on("nextTask", (nextTask) => {
-      socket.emit("displayNextTask", nextTask);
+      io.emit("displayNextTask", nextTask);
       console.log(nextTask);
     });
 
-    socket.on("vote", (data) => {
-      console.log("röstning" + data);
-      votes.push(data.storyPoints);
+    socket.on("vote", (vote) => {
+      console.log("röstning" + vote);
+      const voteToNumber = Number(vote);
+      votes.push(voteToNumber);
       console.log("votes" + votes);
 
       if (votes.length > 2) {
