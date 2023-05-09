@@ -20,7 +20,7 @@ function socket(io) {
     });
 
     socket.on('nextTask', (nextTask) => {
-      socket.emit('displayNextTask', nextTask);
+      io.emit('displayNextTask', nextTask);
       console.log(nextTask);
     })
 
