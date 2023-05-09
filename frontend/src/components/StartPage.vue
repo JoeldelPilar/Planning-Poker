@@ -3,6 +3,7 @@ import router from '@/router'
 import User from '@/models/UserModel'
 import { socket } from '@/socket'
 import { ref } from 'vue'
+import { userState } from '@/sockets/userSocket'
 
 const username = ref('')
 const msgToUser = ref('')
@@ -18,12 +19,13 @@ function connectUser() {
   if (username.value === 'admin') {
     router.push('/admin')
   } else {
-    const user = new User(username.value)
+    const user = new User('', username.value)
     socket.emit('user-join', user)
     router.push('/usercard')
   }
 
   localStorage.setItem('user', username.value)
+  console.log(userState)
 }
 </script>
 
