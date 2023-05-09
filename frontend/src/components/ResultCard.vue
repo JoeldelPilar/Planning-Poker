@@ -4,7 +4,7 @@
 
     socket.emit('vote', { user: "erik", storyPoints: 8 });
 
-    let averageNumber = ref(0);
+    let averageNumber = ref<number|null>(null);
 
     socket.on('average', (average: number) => {
       console.log(`Medelvärdet är ${average}`);
