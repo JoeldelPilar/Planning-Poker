@@ -10,4 +10,5 @@ socket.on('user-join', (users: User[]) => {
   userState.users = []
   // console.log('Mottagen user', users)
   userState.users = users
+  console.log(userState.users)
 });

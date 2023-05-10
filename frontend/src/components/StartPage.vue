@@ -1,8 +1,9 @@
-<script setup lang="ts">;
-import router from '@/router';
-import User from '@/models/UserModel';
-import { socket } from '@/socket';
-import { ref } from 'vue';
+<script setup lang="ts">
+import router from '@/router'
+import User from '@/models/UserModel'
+import { socket } from '@/socket'
+import { ref } from 'vue'
+import { userState } from '@/sockets/userSocket'
 
 const username = ref('');
 const msgToUser = ref('');
@@ -19,12 +20,13 @@ function connectUser() {
     router.push('/admin');
     socket.emit('adminJoin');
   } else {
-    const user = new User(username.value);
-    socket.emit('user-join', user);
-    router.push('/usercard');
+    const user = new User('', username.value)
+    socket.emit('user-join', user)
+    router.push('/usercard')
   }
 
-  localStorage.setItem('user', username.value);
+  localStorage.setItem('user', username.value)
+  console.log(userState)
 }
 </script>
 
