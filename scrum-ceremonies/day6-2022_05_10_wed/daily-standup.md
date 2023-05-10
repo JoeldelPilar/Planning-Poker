@@ -3,16 +3,18 @@
 ## Wazzup?
 > Yesterday I…, today I will…, I need help with…, I'm stuck with…, TIL…
 
-### Name 1
+### Joel Del Pilar
 Lorem ipsum dolor sit amet
 
-### Name 2
+### Liza Grapensparr
+- Igår blev jag färdig med uppgiften som handlade om att admin ska kunna bestämma den slutgiltiga poängen och att detta sparas i databasen. Jag la även till meddelanden för att bekräfta valet som gjorts. Vidare påbörjade arbetet med att lista de tasks som det redan har röstats om under sessionen.
+- Idag planerar jag att bli klar med listan och, om tid finns, påbörja en ny uppgift utifrån prioriteringsordningen.
+- Jag har ett problem med listan och lyfter detta med gruppen under dagens möte.
+
+### Melvin Kempe
 Lorem ipsum dolor sit amet
 
-### Name 3
-Lorem ipsum dolor sit amet
-
-### Name 4
+### Tittie Thomasson
 Lorem ipsum dolor sit amet
 
 
