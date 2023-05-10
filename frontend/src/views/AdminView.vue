@@ -1,28 +1,32 @@
 <script setup lang="ts">
-import NewTask from '../components/admin/NewTask.vue'
-import CurrentTask from '../components/admin/CurrentTask.vue'
-import UnansweredTasks from '../components/admin/UnansweredTasks.vue'
-import AnsweredTasks from '../components/admin/AnsweredTasks.vue'
-import EndSession from '@/components/admin/EndSession.vue'
-import AverageResult from '@/components/AverageResult.vue'
-import ConnectedUsers from '@/components/admin/ConnectedUsers.vue'
-import { userState } from '@/sockets/userSocket'
-import { ref, watchEffect } from 'vue'
-import { socket } from '@/socket'
+  import NewTask from '../components/admin/NewTask.vue';
+  import CurrentTask from '../components/admin/CurrentTask.vue';
+  import UnansweredTasks from '../components/admin/UnansweredTasks.vue';
+  import AnsweredTasks from '../components/admin/AnsweredTasks.vue';
+  import EndSession from '@/components/admin/EndSession.vue';
+  import AverageResult from '@/components/AverageResult.vue';
+  import ConnectedUsers from '@/components/admin/ConnectedUsers.vue';
+  import { userState } from '@/sockets/userSocket';
+  import { ref, watchEffect } from 'vue';
+  import { socket } from '@/socket';
 
-const connectedUsers = ref(userState.users)
-console.log(userState)
+  const connectedUsers = ref(userState.users);
 
-watchEffect(() => {
-  connectedUsers.value = userState.users
-})
+  watchEffect(() => {
+    connectedUsers.value = userState.users;
+  });
 
-let averageNumber = ref<number | null>(null)
+  let averageNumber = ref<number | null>(null);
 
-socket.on('average', (average: number) => {
-  console.log(`Medelvärdet är ${average}`)
-  averageNumber.value = average
-})
+  socket.on('average', (average: number) => {
+    console.log(`Medelvärdet är ${average}`);
+    averageNumber.value = average;
+  });
+
+  socket.on('redirectToStartingpage', (startingpage) => {
+    window.location.href = startingpage;
+    localStorage.removeItem('user');
+  });
 </script>
 
 <template>

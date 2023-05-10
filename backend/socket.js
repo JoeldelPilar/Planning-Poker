@@ -91,7 +91,8 @@ function socket(io) {
       votingResults = []
       socket.emit('votingResults', votingResults);
       socket.emit('clearNewTasks');
-    })
+      io.emit('redirectToStartingpage', '/');
+    });
   });
 }
 
