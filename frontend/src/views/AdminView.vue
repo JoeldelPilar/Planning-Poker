@@ -7,7 +7,7 @@
 </script>
 
 <template>
-  <main>
+  <main class="admin">
     <NewTask />
     <CurrentTask />
     <div class="tasksContainer">
@@ -21,5 +21,9 @@
   .tasksContainer {
     display: flex;
     justify-content: space-around;
+  }
+
+  .admin {
+    color: white;
   }
 </style>

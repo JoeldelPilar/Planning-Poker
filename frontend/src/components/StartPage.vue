@@ -5,19 +5,20 @@ import { socket } from '@/socket'
 import { ref } from 'vue'
 import { userState } from '@/sockets/userSocket'
 
-const username = ref('')
-const msgToUser = ref('')
+const username = ref('');
+const msgToUser = ref('');
 
 function connectUser() {
   //Vill vi kolla om localStorage har ett användarnamn och direkt pusha till user sidan?
-  const usernameRegex = /^[a-zA-Z]+$/
+  const usernameRegex = /^[a-zA-Z]+$/;
 
   if (!usernameRegex.test(username.value)) {
-    msgToUser.value = 'Enter a user name, letters a-z.'
-    return
+    msgToUser.value = 'Enter a user name, letters a-z.';
+    return;
   }
   if (username.value === 'admin') {
-    router.push('/admin')
+    router.push('/admin');
+    socket.emit('adminJoin');
   } else {
     const user = new User('', username.value)
     socket.emit('user-join', user)

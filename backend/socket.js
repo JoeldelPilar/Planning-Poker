@@ -2,10 +2,12 @@ const calculateAverage = require("./utils/votes");
 
 let users = [];
 let votes = [];
+let votingResults = []
 
 function socket(io) {
   io.on("connection", function (socket) {
     console.log("user connected: " + socket.id);
+    socket.emit('votingResults', votingResults);
 
     socket.on('disconnect', function () {
       console.log('user disconnected: ' + socket.id)
@@ -17,7 +19,6 @@ function socket(io) {
         //Send back updated users-list to connected clients.
         io.emit('user-join', users)
       }
-
     });
 
     socket.on("newTask", (newTaskDescription) => {
@@ -32,6 +33,10 @@ function socket(io) {
       io.emit('user-join', users)
     });
 
+    socket.on('adminJoin', () => {
+      socket.emit('votingResults', votingResults);
+    });
+    
     socket.on("nextTask", (nextTask) => {
       io.emit("displayNextTask", nextTask);
       console.log(nextTask);
@@ -65,8 +70,17 @@ function socket(io) {
     });
 
     socket.on('returnCurrentQuestion', (currentTask) => {
-      socket.emit('returnQuestionToList', currentTask)
-    })
+      socket.emit('returnQuestionToList', currentTask);
+    });
+
+    socket.on('adminVote', (data) => {
+      const task = {
+        taskDescription: data.taskDescription,
+        storyPoints: data.storyPoints
+      };
+      votingResults.push(task);
+      socket.emit('votingResults', votingResults);
+    });
   });
 }
 
