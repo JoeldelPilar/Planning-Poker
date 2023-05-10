@@ -12,7 +12,7 @@ import { socket } from '@/socket';
         console.log(fibonacci.fibonacciValue);
         const vote = fibonacci.fibonacciValue
         console.log("vote", vote)
-        socket.emit('vote', vote);
+        socket.emit('vote', { user: signedInUser, vote: vote });
     }
 </script>
 

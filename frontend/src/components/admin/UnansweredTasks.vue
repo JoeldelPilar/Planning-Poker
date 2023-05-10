@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import { socket } from '@/socket';
-  import { ref } from 'vue';
+  import { ref, watchEffect } from 'vue';
 
   interface Task {
     _id: string;
@@ -10,6 +10,13 @@
   }
 
   const tasksArray = ref<Task[]>([]);
+
+  watchEffect(() => {
+    const ul = document.querySelector('.newTasks');
+    if (ul) {
+      ul.innerHTML = ul.innerHTML;
+    }
+  });
 
   function fetchTasks() {
     fetch('http://localhost:3000/tasks')
@@ -56,6 +63,12 @@
 
   socket.on('displayNextTask', () => {
     tasksArray.value.splice(0, 1);
+  })
+
+  socket.on('returnQuestionToList', (task: Task) => {
+    const taskToMove = task;
+    tasksArray.value.push(taskToMove);
+    localStorage.setItem('taskOrder', JSON.stringify(tasksArray.value.map((t: Task) => t._id)));
   })
 
   socket.on('updateList', () => {
