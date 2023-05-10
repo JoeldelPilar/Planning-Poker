@@ -1,11 +1,22 @@
 <script setup lang="ts">
-  
+    import { socket } from '@/socket'
+    import { ref } from 'vue';
+
+    // socket.emit('vote', { user: "erik", storyPoints: 8 });
+
+    let averageNumber = ref<number|null>(null);
+
+    socket.on('average', (average: number) => {
+      console.log(`Medelvärdet är ${average}`);
+      averageNumber.value = average;
+    });
+
 </script>
 
 <template>
     <div class="result-card">
-        <h3>Resultat</h3>
-        <span>1</span>
+        <h3>Result</h3>
+        <span>{{ averageNumber }}</span>
     </div>
 </template>
 
@@ -29,3 +40,4 @@ span {
 }
 
 </style>
+
