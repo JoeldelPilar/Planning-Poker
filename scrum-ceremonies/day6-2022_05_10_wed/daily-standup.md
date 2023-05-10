@@ -14,7 +14,9 @@
 - Jag har ett problem med listan och lyfter detta med gruppen under dagens möte.
 
 ### Melvin Kempe
-Lorem ipsum dolor sit amet
+- Gårdagen började med ett möte i gruppen där vi diskuterade projektet och vad som skulle göras för att komma vidare. Vi diskuterade även olika lösningar för vissa funktioner. Jag blev nästintill helt färdig med usercard komponenten igår också.
+- Idag ska jag finslipa på usercard komponenten samt kolla vad jag kan göra för ny uppgift.
+- Jag har lärt mig en del i att jobba med Vue men har fortfarande mycket kvar att lära där. 
 
 ### Tittie Thomasson
 - Igår hade vi möte på förmiddagen där vi diskuterade projektet och förtydligade vissa delar som vi tänkt lite olika på. Jag jobbade sen vidare på fuktionen för att räkna ut medeltal, rafaktorerade koden och flyttade den till backenden istället. 
