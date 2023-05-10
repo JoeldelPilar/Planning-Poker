@@ -3,6 +3,7 @@ import NewTask from '../components/admin/NewTask.vue'
 import CurrentTask from '../components/admin/CurrentTask.vue'
 import UnansweredTasks from '../components/admin/UnansweredTasks.vue'
 import AnsweredTasks from '../components/admin/AnsweredTasks.vue'
+import EndSession from '@/components/admin/EndSession.vue'
 import AverageResult from '@/components/AverageResult.vue'
 import ConnectedUsers from '@/components/admin/ConnectedUsers.vue'
 import { userState } from '@/sockets/userSocket'
@@ -43,6 +44,7 @@ socket.on('average', (average: number) => {
       </div>
       <AnsweredTasks />
     </div>
+    <EndSession />
   </main>
 </template>
 

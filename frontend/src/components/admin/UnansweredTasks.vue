@@ -75,6 +75,11 @@
     fetchTasks();
   });
 
+  socket.on('clearNewTasks', () => {
+    tasksArray.value = [];
+    localStorage.removeItem('taskOrder');
+  })
+
   fetchTasks();
 </script>
 
