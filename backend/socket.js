@@ -1,6 +1,6 @@
 const calculateAverage = require("./utils/votes");
 
-let users = [];
+let users = []; // {id: socket.id, name: username, storyPoints: ''}
 let votes = [];
 let votingResults = []
 
@@ -8,6 +8,7 @@ function socket(io) {
   io.on("connection", function (socket) {
     console.log("user connected: " + socket.id);
     socket.emit('votingResults', votingResults);
+    io.emit('user-join', users);
 
     socket.on('disconnect', function () {
       console.log('user disconnected: ' + socket.id)
@@ -35,22 +36,26 @@ function socket(io) {
 
     socket.on('adminJoin', () => {
       socket.emit('votingResults', votingResults);
+      io.emit('user-join', users);
     });
-    
+
     socket.on("nextTask", (nextTask) => {
       io.emit("displayNextTask", nextTask);
       console.log(nextTask);
+      votes = [];
+      io.emit('clearResult')
     });
 
     socket.on("vote", (data) => {
       console.log("användare" + data.user);
       console.log("tal" + data.vote);
-      let voteToNumber; 
+      let voteToNumber;
       const user = users.find((user) => user.name === data.user);
 
       if (user) {
         user.storyPoints = data.vote;
         console.log(users);
+        io.emit('user-join', users)
       }
 
       if (data.vote === "?") {
@@ -58,7 +63,7 @@ function socket(io) {
       } else {
         voteToNumber = Number(data.vote)
       }
-      
+
       votes.push(voteToNumber);
 
       if (votes.length === users.length) {

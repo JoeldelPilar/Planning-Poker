@@ -1,9 +1,33 @@
 <script setup lang="ts">
-  import NewTask from '../components/admin/NewTask.vue'
-  import CurrentTask from '../components/admin/CurrentTask.vue'
-  import UnansweredTasks from '../components/admin/UnansweredTasks.vue'
-  import AnsweredTasks from '../components/admin/AnsweredTasks.vue'
-  import AverageResult from '@/components/AverageResult.vue'
+import NewTask from '../components/admin/NewTask.vue'
+import CurrentTask from '../components/admin/CurrentTask.vue'
+import UnansweredTasks from '../components/admin/UnansweredTasks.vue'
+import AnsweredTasks from '../components/admin/AnsweredTasks.vue'
+import AverageResult from '@/components/AverageResult.vue'
+import ConnectedUsers from '@/components/admin/ConnectedUsers.vue'
+import { userState } from '@/sockets/userSocket'
+import { ref, watchEffect } from 'vue'
+import { socket } from '@/socket'
+
+const connectedUsers = ref(userState.users)
+console.log(userState)
+
+ref(userState)
+
+watchEffect(() => {
+  const ul = document.querySelector('.connectedUsers-container')
+
+  if (ul) {
+    ul.innerHTML = ul.innerHTML
+  }
+})
+
+// let averageNumber = ref<number | null>(null)
+
+// socket.on('average', (average: number) => {
+//   console.log(`Medelvärdet är ${average}`)
+//   averageNumber.value = average
+// })
 </script>
 
 <template>
@@ -12,18 +36,37 @@
     <CurrentTask />
     <div class="tasksContainer">
       <UnansweredTasks />
+      <div>
+        <ul class="connectedUsers-container">
+          <ConnectedUsers
+            v-for="{ id, name, storyPoints } in connectedUsers"
+            :key="id"
+            :name="name"
+            :story-points="storyPoints"
+          />
+        </ul>
+        <!-- <span>{{ averageNumber }}</span> -->
+      </div>
       <AnsweredTasks />
     </div>
   </main>
 </template>
 
 <style>
-  .tasksContainer {
-    display: flex;
-    justify-content: space-around;
-  }
+.connectedUsers-container {
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+  padding: 20px;
+  border: 1px solid blue;
+}
 
-  .admin {
-    color: white;
-  }
+.tasksContainer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.admin {
+  color: white;
+}
 </style>
