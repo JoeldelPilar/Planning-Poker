@@ -17,7 +17,8 @@
 Lorem ipsum dolor sit amet
 
 ### Tittie Thomasson
-Lorem ipsum dolor sit amet
+- Igår hade vi möte på förmiddagen där vi diskuterade projektet och förtydligade vissa delar som vi tänkt lite olika på. Jag jobbade sen vidare på fuktionen för att räkna ut medeltal, rafaktorerade koden och flyttade den till backenden istället. 
+- Idag planerar jag att bli klar med alla delar i den funktionen. Tog lite längre tid än planerat då jag behövde tänka om lite. 
 
 
 > ⚠️⚠️⚠️ Remember to add a screenshot of today's scrum board to this folder!
