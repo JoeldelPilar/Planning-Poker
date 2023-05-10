@@ -23,4 +23,5 @@
 - Idag planerar jag att bli klar med alla delar i den funktionen. Tog lite längre tid än planerat då jag behövde tänka om lite. 
 
 
-> ⚠️⚠️⚠️ Remember to add a screenshot of today's scrum board to this folder!
+![bild](https://github.com/Medieinstitutet/fed22d-agila-planning-poker-expedit/assets/103323456/ac8ec3c3-8c32-484b-bdc9-04e013822400)
+
