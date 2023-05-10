@@ -30,21 +30,27 @@ function socket(io) {
     socket.on("vote", (data) => {
       console.log("användare" + data.user);
       console.log("tal" + data.vote);
-
-      const voteToNumber = Number(data.vote);
-      votes.push(voteToNumber);
-
+      let voteToNumber; 
       const user = users.find((user) => user.name === data.user);
+
       if (user) {
         user.storyPoints = data.vote;
         console.log(users);
       }
 
-      const usersThatVoted = users.filter(user => user.storyPoints !== "");
-      console.log(usersThatVoted);
+      if (data.vote === "?") {
+        voteToNumber = "?";
+      } else {
+        voteToNumber = Number(data.vote)
+      }
+      
+      votes.push(voteToNumber);
 
-      if (votes.length === usersThatVoted.length) {
-          calculateAverage(votes, io)
+      if (votes.length === users.length) {
+        const accurateVotes = votes.filter(vote => vote !== "?");
+        console.log("giltiga röster" + accurateVotes);
+        console.log(("users" + users));
+        calculateAverage(accurateVotes, io)
       }
     });
 

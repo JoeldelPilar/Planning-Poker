@@ -1,5 +1,5 @@
-function calculateAverage(votes, io) {
-    const average = votes.reduce((acc, curr) => acc + curr, 0) / votes.length;
+function calculateAverage(accurateVotes, io) {
+    const average = accurateVotes.reduce((acc, curr) => acc + curr, 0) / accurateVotes.length;
   
     // Find nearest Fibonacci-number
     let prev = 1;

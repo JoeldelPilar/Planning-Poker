@@ -14,7 +14,6 @@
       <UnansweredTasks />
       <AnsweredTasks />
     </div>
-    <AverageResult />
   </main>
 </template>
 
