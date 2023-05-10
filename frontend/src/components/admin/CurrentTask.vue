@@ -25,6 +25,7 @@
 
   function saveStoryPoints() {
     const taskId = nextTask.value?._id;
+    const taskDescription = nextTask.value?.task;
 
     if (selectedStoryPoints.value === 0) {
       socket.emit('returnCurrentQuestion', nextTask.value);
@@ -37,6 +38,7 @@
       })
       .then(() => {
         showResult.value = true;
+        socket.emit('adminVote', { taskDescription: taskDescription, storyPoints: selectedStoryPoints.value });
       })
       .catch(error => {
         console.error('Error:', error);

@@ -1,29 +1,30 @@
-<script setup lang="ts">
-import router from '@/router'
-import User from '@/models/UserModel'
-import { socket } from '@/socket'
-import { ref } from 'vue'
+<script setup lang="ts">;
+import router from '@/router';
+import User from '@/models/UserModel';
+import { socket } from '@/socket';
+import { ref } from 'vue';
 
-const username = ref('')
-const msgToUser = ref('')
+const username = ref('');
+const msgToUser = ref('');
 
 function connectUser() {
   //Vill vi kolla om localStorage har ett användarnamn och direkt pusha till user sidan?
-  const usernameRegex = /^[a-zA-Z]+$/
+  const usernameRegex = /^[a-zA-Z]+$/;
 
   if (!usernameRegex.test(username.value)) {
-    msgToUser.value = 'Enter a user name, letters a-z.'
-    return
+    msgToUser.value = 'Enter a user name, letters a-z.';
+    return;
   }
   if (username.value === 'admin') {
-    router.push('/admin')
+    router.push('/admin');
+    socket.emit('adminJoin');
   } else {
-    const user = new User(username.value)
-    socket.emit('user-join', user)
-    router.push('/usercard')
+    const user = new User(username.value);
+    socket.emit('user-join', user);
+    router.push('/usercard');
   }
 
-  localStorage.setItem('user', username.value)
+  localStorage.setItem('user', username.value);
 }
 </script>
 
