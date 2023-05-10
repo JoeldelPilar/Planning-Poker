@@ -12,3 +12,10 @@ socket.on('user-join', (users: User[]) => {
   userState.users = users
   console.log(userState.users)
 });
+
+socket.on('clearResult', () => {
+  for (let i = 0; i < userState.users.length; i++) {
+    userState.users[i].storyPoints = '';     
+  }
+  console.log(userState.users)
+})

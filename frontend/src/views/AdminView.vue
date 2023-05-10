@@ -12,22 +12,16 @@ import { socket } from '@/socket'
 const connectedUsers = ref(userState.users)
 console.log(userState)
 
-ref(userState)
-
 watchEffect(() => {
-  const ul = document.querySelector('.connectedUsers-container')
-
-  if (ul) {
-    ul.innerHTML = ul.innerHTML
-  }
+  connectedUsers.value = userState.users
 })
 
-// let averageNumber = ref<number | null>(null)
+let averageNumber = ref<number | null>(null)
 
-// socket.on('average', (average: number) => {
-//   console.log(`Medelvärdet är ${average}`)
-//   averageNumber.value = average
-// })
+socket.on('average', (average: number) => {
+  console.log(`Medelvärdet är ${average}`)
+  averageNumber.value = average
+})
 </script>
 
 <template>
@@ -45,7 +39,7 @@ watchEffect(() => {
             :story-points="storyPoints"
           />
         </ul>
-        <!-- <span>{{ averageNumber }}</span> -->
+        <span>Avarage Story Point: {{ averageNumber }}</span>
       </div>
       <AnsweredTasks />
     </div>

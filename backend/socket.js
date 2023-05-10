@@ -43,7 +43,7 @@ function socket(io) {
       io.emit("displayNextTask", nextTask);
       console.log(nextTask);
       votes = [];
-      io.emit('clearResult')
+      io.emit('clearResult');
     });
 
     socket.on("vote", (data) => {
