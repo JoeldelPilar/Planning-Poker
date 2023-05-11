@@ -25,6 +25,18 @@ router.post('/add', async(req, res) => {
   }
 });
 
+router.put('/endSession', async (req, res) => {
+  try {
+    const updatedTasks = await TaskModel.updateMany(
+      { deleted: false },
+      { $set: { deleted: true } }
+    );
+    res.status(200).json(updatedTasks);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+});
+
 router.put('/:documentId', async(req, res) => {
   try {
     const task = await TaskModel.findByIdAndUpdate(req.params.documentId, { $set: { storyPoints: req.body.storyPoints }});
