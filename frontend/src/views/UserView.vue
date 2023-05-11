@@ -1,13 +1,15 @@
 <script setup lang="ts">
 
-import PreviousTask from '@/components/PreviousTask.vue'
-import UsercardView from '../components/UserCard.vue'
-import ResultCard from '@/components/ResultCard.vue'
-import UserTask from '@/components/UserTask.vue'
-import { socket } from '@/socket'
-import { ref } from 'vue'
-  
-const fibonaccis = ["1", "3", "5", "8", "?"];
+  import PreviousTask from '@/components/PreviousTask.vue'
+  import UsercardView from '../components/UserCard.vue'
+  import ResultCard from '@/components/ResultCard.vue'
+  import UserTask from '@/components/UserTask.vue'
+  import { socket } from '@/socket'
+  import { ref } from 'vue'
+    
+  const fibonaccis = ["1", "3", "5", "8", "?"];
+
+  const task = ref("");
 
 
   const disabledCards = ref(true)
@@ -29,19 +31,13 @@ const fibonaccis = ["1", "3", "5", "8", "?"];
   const signedInUser = localStorage.getItem("user")
   console.log("signedInUser", signedInUser)
 
-    });
-  }
 
+  displayTask();
 
-const signedInUser = localStorage.getItem('user');
-console.log('signedInUser', signedInUser);
-
-displayTask();
-
-socket.on('redirectToStartingpage', (startingpage) => {
-  window.location.href = startingpage;
-  localStorage.removeItem('user');
-});
+  socket.on('redirectToStartingpage', (startingpage) => {
+    window.location.href = startingpage;
+    localStorage.removeItem('user');
+  });
 
 </script>
 
