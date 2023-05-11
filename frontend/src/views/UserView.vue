@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import UsercardView from '../components/UserCard.vue'
+  import UsercardView from '../components/UserCard.vue';
   import ResultCard from '@/components/ResultCard.vue';
   import UserTask from '@/components/UserTask.vue';
   import { socket } from '@/socket';
@@ -15,7 +15,7 @@
     socket.on("displayNextTask", (nextTask) => {
         console.log("nextTask", nextTask);
         const displayTask = nextTask.task;
-        console.log("displayTask", displayTask)
+        console.log("displayTask", displayTask);
         task.value = displayTask;
         disabledCards.value = false;
     })
@@ -28,7 +28,16 @@
   const signedInUser = localStorage.getItem("user")
   console.log("signedInUser", signedInUser)
 
+    });
+  }
+
+
   displayTask();
+
+  socket.on('redirectToStartingpage', (startingpage) => {
+    window.location.href = startingpage;
+    localStorage.removeItem('user');
+  });
 </script>
 
 <template>
