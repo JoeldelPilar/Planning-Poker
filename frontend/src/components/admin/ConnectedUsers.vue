@@ -1,5 +1,9 @@
 <template>
   <div>
+    <li class="listHeader">
+        <div class="taskName"><h3>Name</h3></div>
+        <div class="taskOrder"><h3>Story points</h3></div>
+      </li>
     <li>
       {{ name }} <span>{{ storyPoints }}</span>
     </li>
@@ -25,7 +29,6 @@ li {
   margin: auto;
   border-bottom: 2px solid whitesmoke;
   border-radius: 0.2rem;
-  color: black;
-  
+  font-size: 1.1rem;
 }
 </style>

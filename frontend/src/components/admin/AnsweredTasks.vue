@@ -19,8 +19,8 @@
     <h2 class="adminCenter">Voting results:</h2>
     <ul class="votingList">
       <li class="listHeader">
-        <div>Task description</div>
-        <div>Story points</div>
+        <div><h3>Task description</h3></div>
+        <div><h3>Story points</h3></div>
       </li>
       <li class="votingResult" v-for="(result, index) in votingResults" :key="index">
         <div class="description">

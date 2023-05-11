@@ -57,7 +57,7 @@
 .connectedUsers-container {
   display: flex;
   flex-direction: column;
-  width: 40vw;
+  width: 30vw;
   padding: 20px;
   background-color: #06928e;
   border-radius: 0.5rem;
@@ -84,8 +84,9 @@
   background-color: #F9F7F5;
   color: black;
   padding: 0.5rem;
-  width: 50%;
+  width: 90%;
   margin: auto;
   border-radius: 0.2rem;
+  margin-bottom: 0;
 }
 </style>

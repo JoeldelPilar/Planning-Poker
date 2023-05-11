@@ -74,6 +74,11 @@
 </template>
 
 <style>
+
+  h2 {
+    font-size: 1.8rem;
+  }
+  
   .currentTasksContainer {
     margin: 20px auto;
     padding: 20px;

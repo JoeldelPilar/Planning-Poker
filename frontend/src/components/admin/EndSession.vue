@@ -29,4 +29,12 @@
     top: 20px;
     right: 20px;
   }
+
+  button {
+    background-color: #F9F7F5;
+    border: none;
+    padding: 0.4rem;
+    border-radius: 0.2rem;
+    margin-left: 0.4rem;
+  }
 </style>

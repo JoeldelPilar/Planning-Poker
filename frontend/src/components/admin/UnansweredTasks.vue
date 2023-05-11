@@ -88,8 +88,8 @@
     <h2 class="adminCenter">To be voted on:</h2>
     <ul class="newTasks">
       <li class="listHeader">
-        <div class="taskName">Task description</div>
-        <div class="taskOrder">Next task to be displayed</div>
+        <div class="taskName"><h3>Task description</h3></div>
+        <div class="taskOrder"><h3>Next task to be displayed</h3></div>
       </li>
       <li v-for="(task, index) in tasksArray" :key="index" class="unansweredTask">
         <div class="taskName">{{ task.task }}</div>
@@ -111,6 +111,9 @@
 </template>
 
 <style>
+  h3 {
+    font-size: 1.1rem;
+  }
   .unansweredTasksContainer {
     width: 40vw;
     padding: 20px;
@@ -120,6 +123,7 @@
 
   .adminCenter {
     text-align: center;
+    text-decoration: underline;
   }
 
   .newTasks {
@@ -153,5 +157,6 @@
 
   .nextTaskButton {
     margin: auto;
+    margin-bottom: 0;
   }
 </style>
