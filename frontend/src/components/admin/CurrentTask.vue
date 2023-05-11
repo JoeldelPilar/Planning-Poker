@@ -78,7 +78,8 @@
     margin: 20px auto;
     padding: 20px;
     width: 40vw;
-    border: 1px solid red;
+    background-color: #06928e;
+    border-radius: 0.5rem;
     text-align: center;
   }
 

@@ -38,7 +38,8 @@
   .answeredTasksContainer {
     width: 40vw;
     padding: 20px;
-    border: 1px solid blue;
+    background-color: #06928e;
+    border-radius: 0.5rem;
   }
 
   .votingList {

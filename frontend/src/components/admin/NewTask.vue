@@ -50,6 +50,12 @@
     margin: 20px;
   }
 
+  input {
+    padding: 0.4rem 1rem;
+    border: none;
+    border-radius: 0.2rem;
+  }
+
   .visually-hidden {
     position: absolute;
     position: absolute !important;
