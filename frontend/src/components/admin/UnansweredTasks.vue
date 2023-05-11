@@ -112,7 +112,7 @@
 
 <style>
   h3 {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
   }
   .unansweredTasksContainer {
     width: 40vw;
@@ -124,6 +124,7 @@
   .adminCenter {
     text-align: center;
     text-decoration: underline;
+    font-size: 1.8rem;
   }
 
   .newTasks {
@@ -144,6 +145,7 @@
 
   .taskName {
     grid-column: 1;
+    font-size: 1.2rem;
   }
 
   .taskOrder {
@@ -153,10 +155,24 @@
 
   .taskOrder button {
     margin: 0px 10px;
+    cursor: pointer;
   }
 
   .nextTaskButton {
     margin: auto;
     margin-bottom: 0;
+    padding: 0.8rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+  }
+
+  .taskOrder button:hover {
+    background-color: lightcyan;
+  }
+
+  .nextTaskButton:hover {
+    background-color: lightcyan;
+    transition: all 0.2s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 10px 25px;
   }
 </style>

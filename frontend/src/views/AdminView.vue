@@ -82,8 +82,8 @@
 
 .average-result {
   background-color: #F9F7F5;
-  color: black;
-  padding: 0.5rem;
+  padding: 0.8rem;
+  font-size: 1.2rem;
   width: 90%;
   margin: auto;
   border-radius: 0.2rem;
