@@ -35,7 +35,7 @@ socket.on('clearResult', () => {
   width: 150px;
   height: 200px;
   border-radius: 10px;
-  margin-right: 30px;
+  margin-right: 80px;
 }
 
 span {

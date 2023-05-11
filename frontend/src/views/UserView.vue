@@ -70,14 +70,14 @@ socket.on('redirectToStartingpage', (startingpage) => {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 100px;
+    margin: 80px 0 30px 0;
   }
   .task-container {
     margin: auto;
     margin-top: 100px;
     min-height: 50px;
-    max-width: 300px;
-    padding: 5px 20px;
+    max-width: 600px;
+    padding: 5px 10px;
     border-radius: 10px;
     background-color: #F9F7F5;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
