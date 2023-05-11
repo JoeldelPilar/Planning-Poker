@@ -5,7 +5,7 @@
 
 ### Joel del Pilar  
 - Igår Mobprogrammerade vi en komponent för att via ansluta användare för admin samt vad varje användare röstat för. Jag började sen med att bygga en komponent för att visa senaste röstningens resultat för användarna, strukturen och logiken blev klar. Vi hade även ett möte på förmiddagen där vi summerade lite grann vad som va klart och vad som skulle komma här näst.
-- Idag fortsätter med min komponent som jag började på igår, styling kvar att göra & vet hur den ska gå till.
+- Idag fortsätter med min komponent som jag började på igår, styling kvar att göra & vet hur den ska gå till. Jag kommer också börja uppdatera readme.md
 - Igår lärde jag mig watchEffect i vue och hur det kan implementeras, tack Titte och Liza :)
 
 ### Liza Grapensparr
