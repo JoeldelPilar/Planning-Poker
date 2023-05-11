@@ -14,8 +14,8 @@
 
 ### Melvin
 - Igår arbetade vi med mobprogramering för att i admin view för att kunna se alla anslutna användare samt se hur många storypoints de votade på vid varje task. 
-- Idag ska jag fortsätta med usercard logic branchen för att lägga in kod som gör så att efter att man har klickat på ett kort så ska det inte gå att klicka på förens nästa task syns.
-- Jag sitte fast med det då jag inte är helt säker på hur jag ska skriva det i och med att jag är väldigt ny i Vue. 
+- Idag ska jag fortsätta med usercard logic branchen för att lägga in kod som gör så att efter att man har klickat på ett kort så ska det inte gå att klicka på förens nästa task syns. Vi uppdaterade också storypoints för den tasken då det tog mer än en dag. 
+- Jag sitter fast med det då jag inte är helt säker på hur jag ska skriva det i och med att jag är väldigt ny i Vue. 
 
 ### Tittie
 - Igår fick jag färdigt funktionen som ska visa medeltalet och avrunda till närmsta fibonacci-tal och vi fick även in så att vi visar det värdet i admin-vyn. På eftermiddagen hade vi mobprogrammering för att lösa så att vi kunde se alla anslutna användare och vad de röstar på. 

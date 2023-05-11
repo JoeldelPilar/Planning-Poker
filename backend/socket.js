@@ -51,6 +51,7 @@ function socket(io) {
       console.log("tal" + data.vote);
       let voteToNumber;
       const user = users.find((user) => user.name === data.user);
+      socket.emit("disableBtn")
 
       if (user) {
         user.storyPoints = data.vote;
@@ -84,7 +85,7 @@ function socket(io) {
         storyPoints: data.storyPoints
       };
       votingResults.push(task);
-      socket.emit('votingResults', votingResults);
+      io.emit('votingResults', votingResults);
     });
 
     socket.on('clearVotingResults', () => {
