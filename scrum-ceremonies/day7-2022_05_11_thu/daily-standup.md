@@ -22,4 +22,5 @@
 - Idag ska jag lägga in lite mer CSS i komponenterna så att vi får en lite snyggare och mer responsiv design. 
 
 
-> ⚠️⚠️⚠️ Remember to add a screenshot of today's scrum board to this folder!
+![bild](https://github.com/Medieinstitutet/fed22d-agila-planning-poker-expedit/assets/103323456/cf95ca87-a433-4de2-befc-0a703811b7a7)
+
