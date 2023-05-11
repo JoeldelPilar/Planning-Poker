@@ -2,7 +2,7 @@
 
 ## About
 
-This Poker Planning web app was a team project during the course 'Agile working methods'. The assignment was to focus on working with Scrum. <br>
+This Planning Poker web app was a team project during the course 'Agile working methods'. The assignment was to focus on working with Scrum. <br>
 Over the course of two weeks we created a mvp version of our Planning Poker idea. We worked in short sprints of one week each. <br>
 Because of the course language Swedish our documentaion (foler 'scrum-cermonies') is in Swedish, feel free to use ie google translate <br>
 if you are curious about our process.
@@ -28,7 +28,8 @@ if you are curious about our process.
 
 ## See Also
 
-In the 'frontend' folder you find another README.md - file. Here we have some thoughts on how the project could proceed, what could be <br>included in the next sprint and personal reflections.
+In the 'frontend' folder you find another README.md - file. Here we have some thoughts on how the project could proceed, what could be <br>
+included in the next sprint and personal reflections.
 
 ## Get started
 
