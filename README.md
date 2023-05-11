@@ -1,16 +1,65 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/V_7RZ58X)
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=11049782&assignment_repo_type=AssignmentRepo)
-# Grupparbete i kursen Agilt projektarbete
-Ingår i utbildningen "Front End Developer 2022 Distans" på Medieinstitutet.
+# Planning Poker
 
-## Uppgiftsbeskrivning
-Se kurswebb.
+## About
 
-Tekniskt upplägg avgör ni på egen hand.
+This Poker Planning web app was a team project during the course 'Agile working methods'. The assignment was to focus on working with Scrum. <br>
+Over the course of two weeks we created a mvp version of our Planning Poker idea. We worked in short sprints of one week each. <br>
+Because of the course language Swedish our documentaion (foler 'scrum-cermonies') is in Swedish, feel free to use ie google translate <br>
+if you are curious about our process.
 
-## Att göra
-- [ ] Fyll i scrum-mallarna dagligen (ej helger). Ni hittar dessa i mappen `scrum-ceremonies`.
+## The Team
 
-- [X] Skriv ett gruppkontrakt: när träffas ni varje vardag och hur. Bestäm tider för retro, demo och review redan nu. Hur ska ni arbeta? Hur hanterar ni pull requests och merges? Vem ansvarar för testning?
+- [Liza Grapensparr](https://github.com/Grapensparr) - Scrum Master<br>
+- [Tittie Thomasson](https://github.com/tittieth)<br>
+- [Melvin Kempe](https://github.com/K3mp3)<br>
+- [Joel](https://github.com/JoeldelPilar)
 
-- Önskar ni feedback på koden ska ni _inte_ merge:a pull requesten som heter "Feedback".
+## Tech Stack
+
+- Vue.js 3
+- TypeScript
+- JavaScript
+- Vite
+- Express
+- NoSQL - MongoDB
+- Socket.io
+- CSS
+- HMTL
+
+## See Also
+
+In the 'frontend' folder you find another README.md - file. Here we have some thoughts on how the project could proceed, what could be <br>included in the next sprint and personal reflections.
+
+## Get started
+
+\* DISCLAIMER \*
+
+This app requiers a NoSql database for full functionallity, we used MongoDB and Atlas. You can get a free acount on Atlas <br>
+just follow the steps provided [here](https://www.mongodb.com/atlas). When you are up and running with Atlas, add a .env file<br>
+with your connection and credentials in the backend root.
+
+\*DISCLAIMER END \*
+
+1. Clone this repo and save it locally on your machine.
+
+2. Open the root folder that contains both "Backend" and "Frontend" dir.
+
+3. <b>Backend</b>
+   (for ease of use we recomend that you have nodemon installed)
+
+- cd in to backend folder.
+- type `npm install` in your terminal followed by:
+- `nodemon start`
+
+Now the server should be up and running! Default port for the server: 3000
+
+4. <b>Frontend</b>
+
+- cd in to frontend folder.
+- type `npm install` in your terminal.
+- open `Frontend/src/socket.ts` and change `const URL` to your localhost (if the project is offline the URL will be localhost by default).
+- `npm run dev`
+
+Now you should be given a url in your terminal, `ctrl` + `left click` on that url to open in browser.
+
+Now the app is running and should work according to current version.
