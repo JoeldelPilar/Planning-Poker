@@ -12,6 +12,7 @@
   const nextTask = ref<Task|null>(null);
   const selectedStoryPoints = ref<number|null>(null);
   const showResult = ref<boolean>(false);
+  const disabledButton = ref(true)
   
   socket.on('displayNextTask', (task) => {
     showResult.value = false;
@@ -21,9 +22,11 @@
 
   function setStoryPoints(points: number): void {
     selectedStoryPoints.value = points;
+    disabledButton.value = false;
   }
 
   function saveStoryPoints() {
+    disabledButton.value = true;
     const taskId = nextTask.value?._id;
     const taskDescription = nextTask.value?.task;
 
@@ -60,7 +63,7 @@
           <button :class="{ activeOption: selectedStoryPoints === 8 }" @click="setStoryPoints(8)">8</button>
           <button :class="{ activeOption: selectedStoryPoints === 0 }" @click="setStoryPoints(0)">?</button>
         </div>
-        <button @click="saveStoryPoints">Save</button>
+        <button @click="saveStoryPoints" :disabled="disabledButton === true">Save</button>
       </div>
       <div v-if="showResult">
         <p v-if="selectedStoryPoints !== 0">Your vote has been saved</p>
