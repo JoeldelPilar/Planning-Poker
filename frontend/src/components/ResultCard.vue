@@ -18,7 +18,7 @@ socket.on('clearResult', () => {
 
 <template>
   <div class="result-card">
-    <h3>Result</h3>
+    <h3>Average</h3>
     <span>{{ averageNumber }}</span>
   </div>
 </template>
