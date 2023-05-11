@@ -70,6 +70,7 @@ socket.on('redirectToStartingpage', (startingpage) => {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 100px;
   }
   .task-container {
     margin: auto;
@@ -88,10 +89,5 @@ socket.on('redirectToStartingpage', (startingpage) => {
   display: flex;
   justify-content: center;
   gap: 50px;
-}
-
-.result-container {
-  display: flex;
-  justify-content: end;
 }
 </style>
