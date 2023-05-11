@@ -18,4 +18,4 @@ socket.on('clearResult', () => {
     userState.users[i].storyPoints = '';     
   }
   console.log(userState.users)
-})
+}); 
