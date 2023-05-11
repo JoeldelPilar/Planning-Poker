@@ -85,7 +85,7 @@ function socket(io) {
         storyPoints: data.storyPoints
       };
       votingResults.push(task);
-      socket.emit('votingResults', votingResults);
+      io.emit('votingResults', votingResults);
     });
 
     socket.on('clearVotingResults', () => {
