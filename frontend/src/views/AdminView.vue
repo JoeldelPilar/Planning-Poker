@@ -38,6 +38,10 @@
       <div class="connectedUsers-container">
         <h2 class="adminCenter">Connected users:</h2>
         <ul class="connectedUsers-ul">
+          <li class="listHeader">
+            <div class="taskName"><h3>Name</h3></div>
+            <div class="taskOrder"><h3>Story points</h3></div>
+          </li>
           <ConnectedUsers
             v-for="{ id, name, storyPoints } in connectedUsers"
             :key="id"

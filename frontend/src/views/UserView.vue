@@ -86,7 +86,6 @@
   margin-inline-start: 30px;
   width: 400px;
   /* height: 50px; */
-  background-color: antiquewhite;
   padding-block: 10px;
   padding-inline: 50px;
 }

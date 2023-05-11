@@ -63,7 +63,7 @@
           <button :class="{ activeOption: selectedStoryPoints === 8 }" @click="setStoryPoints(8)">8</button>
           <button :class="{ activeOption: selectedStoryPoints === 0 }" @click="setStoryPoints(0)">?</button>
         </div>
-        <button @click="saveStoryPoints" :disabled="disabledButton === true">Save</button>
+        <button class="save-btn" @click="saveStoryPoints" :disabled="disabledButton === true">Save</button>
       </div>
       <div v-if="showResult">
         <p v-if="selectedStoryPoints !== 0">Your vote has been saved</p>
@@ -117,7 +117,7 @@
   }
 
   .save-btn {
-    padding: 15px 65px;
+    padding: 10px 65px;
     font-size: 1.5rem;
   }
 

@@ -1,9 +1,5 @@
 <template>
   <div>
-    <li class="listHeader">
-        <div class="taskName"><h3>Name</h3></div>
-        <div class="taskOrder"><h3>Story points</h3></div>
-      </li>
     <li>
       {{ name }} <span>{{ storyPoints }}</span>
     </li>
