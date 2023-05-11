@@ -1,16 +1,21 @@
 <script setup lang="ts">
-
   import PreviousTask from '@/components/PreviousTask.vue'
   import UsercardView from '../components/UserCard.vue'
   import ResultCard from '@/components/ResultCard.vue'
   import UserTask from '@/components/UserTask.vue'
+  import UserScorecards from '@/components/UserScorecards.vue'
+  import { userState } from '@/sockets/userSocket';
   import { socket } from '@/socket'
-  import { ref } from 'vue'
+  import { ref, watchEffect } from 'vue'
     
+  const connectedUsers = ref(userState.users);
+
+  watchEffect(() => {
+    connectedUsers.value = userState.users;
+  });
+
   const fibonaccis = ["1", "3", "5", "8", "?"];
-
-  const task = ref("");
-
+  const task = ref('')
 
   const disabledCards = ref(true)
 
@@ -31,14 +36,12 @@
   const signedInUser = localStorage.getItem("user")
   console.log("signedInUser", signedInUser)
 
-
   displayTask();
 
   socket.on('redirectToStartingpage', (startingpage) => {
     window.location.href = startingpage;
     localStorage.removeItem('user');
   });
-
 </script>
 
 <template>
@@ -59,7 +62,14 @@
         :key="index"
         :fibonacci-value="fibonacci"
         :disabled="disabledCards === true"
-
+      />
+    </div>
+    <div class="userScorecards">
+      <UserScorecards
+        v-for="(user, index) in connectedUsers"
+        :key="index"
+        :name="user.name"
+        :story-points="user.storyPoints"
       />
     </div>
   </main>
@@ -100,5 +110,12 @@
 .result-container {
   display: flex;
   justify-content: end;
+}
+
+.userScorecards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 20px;
 }
 </style>
