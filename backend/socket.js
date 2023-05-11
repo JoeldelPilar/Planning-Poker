@@ -51,6 +51,7 @@ function socket(io) {
       console.log("tal" + data.vote);
       let voteToNumber;
       const user = users.find((user) => user.name === data.user);
+      socket.emit("disableBtn")
 
       if (user) {
         user.storyPoints = data.vote;

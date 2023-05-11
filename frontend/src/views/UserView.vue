@@ -9,16 +9,29 @@ import { ref } from 'vue'
   
 const fibonaccis = ["1", "3", "5", "8", "?"];
 
-const task = ref('')
 
-function displayTask() {
-  socket.on('displayNextTask', (nextTask) => {
-    console.log('nextTask', nextTask);
-    const displayTask = nextTask.task;
-    console.log('displayTask', displayTask);
-    task.value = displayTask;
+  const disabledCards = ref(true)
+
+  function displayTask() {
+    socket.on("displayNextTask", (nextTask) => {
+        console.log("nextTask", nextTask);
+        const displayTask = nextTask.task;
+        console.log("displayTask", displayTask);
+        task.value = displayTask;
+        disabledCards.value = false;
+    })
+  }
+
+  socket.on("disableBtn", () => {
+    disabledCards.value = true;
   })
-}
+
+  const signedInUser = localStorage.getItem("user")
+  console.log("signedInUser", signedInUser)
+
+    });
+  }
+
 
 const signedInUser = localStorage.getItem('user');
 console.log('signedInUser', signedInUser);
@@ -49,7 +62,8 @@ socket.on('redirectToStartingpage', (startingpage) => {
         v-for="(fibonacci, index) in fibonaccis"
         :key="index"
         :fibonacci-value="fibonacci"
-        :disabled="task.length == 0"
+        :disabled="disabledCards === true"
+
       />
     </div>
   </main>
