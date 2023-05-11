@@ -27,13 +27,16 @@ displayTask()
 
 <template>
   <main>
-    <PreviousTask class="previous-container" />
     <div class="task-container">
       <UserTask :task="task"></UserTask>
     </div>
-    <aside class="result-container">
-      <ResultCard />
-    </aside>
+
+    <section class="voting-stats-container">
+      <PreviousTask class="previous-container" />
+      <aside class="result-container">
+        <ResultCard />
+      </aside>
+    </section>
     <div class="cards-container">
       <UsercardView
         v-for="(fibonacci, index) in fibonaccis"
@@ -46,8 +49,18 @@ displayTask()
 </template>
 
 <style scoped>
+.voting-stats-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .previous-container {
+  margin-inline-start: 30px;
+  width: 400px;
+  /* height: 50px; */
   background-color: antiquewhite;
+  padding-block: 10px;
+  padding-inline: 50px;
 }
 .task-container {
   margin: auto;
