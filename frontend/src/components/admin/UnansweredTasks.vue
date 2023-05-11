@@ -10,6 +10,7 @@
   }
 
   const tasksArray = ref<Task[]>([]);
+  const disabledButton = ref(false)
 
   watchEffect(() => {
     const ul = document.querySelector('.newTasks');
@@ -58,7 +59,8 @@
   }
 
   function displayNextTask() {
-    socket.emit('nextTask', tasksArray.value[0])
+    socket.emit('nextTask', tasksArray.value[0]);
+    disabledButton.value = true;
   }
 
   socket.on('displayNextTask', () => {
@@ -78,6 +80,10 @@
   socket.on('clearNewTasks', () => {
     tasksArray.value = [];
     localStorage.removeItem('taskOrder');
+  })
+
+  socket.on('votingResults', () => {
+    disabledButton.value = false;
   })
 
   fetchTasks();
@@ -105,7 +111,7 @@
       </li>
     </ul>
     <div class="adminCenter">
-      <button @click="displayNextTask" class="nextTaskButton">Display next task</button>
+      <button @click="displayNextTask" class="nextTaskButton" :disabled="disabledButton === true">Display next task</button>
     </div>
   </div>
 </template>
