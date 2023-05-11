@@ -36,4 +36,4 @@ improvment. Maybe someting to bring to the salary negotiation!
 - When working in a new team we point out the importance of having stand-ups and retros<br>
   if not scrum, in some way similar.
 - Recap team effort often/weekly, get a feeling for the work-load the team can handle.
-- Work in smaller chunks and adjust, this helps deliver estimations.
+- Work in smaller chunks and adjust, this helps to estimate time to delivery.

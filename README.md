@@ -12,7 +12,7 @@ if you are curious about our process.
 - [Liza Grapensparr](https://github.com/Grapensparr) - Scrum Master<br>
 - [Tittie Thomasson](https://github.com/tittieth)<br>
 - [Melvin Kempe](https://github.com/K3mp3)<br>
-- [Joel](https://github.com/JoeldelPilar)
+- [Joel del Pilar](https://github.com/JoeldelPilar)
 
 ## Tech Stack
 
