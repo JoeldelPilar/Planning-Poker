@@ -8,7 +8,8 @@ const fibonacci = defineProps({
   fibonacciValue: String
 })
 let vote = null
-function readCardValue() {
+
+  function readCardValue() {
   console.log(fibonacci.fibonacciValue)
   vote = fibonacci.fibonacciValue
   console.log('vote', vote)
