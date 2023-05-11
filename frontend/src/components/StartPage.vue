@@ -32,7 +32,7 @@ function connectUser() {
 
 <template>
   <section class="enter-card">
-    <h1>Poker Planner</h1>
+    <h1>Planning Poker</h1>
     <form @submit.prevent="connectUser()">
       <label for="username-input" class="visually-hidden">Enter username</label>
       <input v-model="username" type="text" name="username-input" placeholder="Username" />
