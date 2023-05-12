@@ -12,3 +12,5 @@
 - Idag ska jag tillsammans med min grupp vara med på demo inför hela klassen och pressentera det vi har jobbat med under kursen. 
 
 ### Tittie
+- Igår gjorde jag designen för sidan så att den blev lite mer enhetlig och fick ett trevligare intryck. I dagsläget är den dock inte helt responsiv och fungerar endast för lite större skärmar. Så det är något jag ska arbeta vidare på. 
+- Idag ska vi ha retro och review och sen är det demo för klassen. 
