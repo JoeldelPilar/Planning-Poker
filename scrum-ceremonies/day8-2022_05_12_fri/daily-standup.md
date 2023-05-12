@@ -10,6 +10,8 @@ Vi hade även plannering för vår demo.
 - Generell inlärning. Har lärt mig hur jag kan arbeta på ett effektivare sätt än jag gjort innan.
 
 ### Liza Grapensparr
+- Igår hjälpte jag Melvin med hans problem med knapparna. Jag passade även på att fixa till två buggar i admin-läget. Utöver detta skapade jag kort för samtliga användare i användar-vyn, så alla kan se vilka som är inloggade. När alla inloggade användare har röstat visas även vilken poäng alla användare har valt.
+- Idag ska jag vara med på retro och demo för hela klassen.
 
 ### Melvin
 - Igår gjorde jag klart funktionen med att disabla vote korten i usercard delen efter att man har votat på en task med hjälp av Liza. Jag var även med på daily standup mötet vi hade
