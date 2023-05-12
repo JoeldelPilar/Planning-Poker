@@ -35,8 +35,13 @@
     <CurrentTask />
     <div class="tasksContainer">
       <UnansweredTasks />
-      <div>
-        <ul class="connectedUsers-container">
+      <div class="connectedUsers-container">
+        <h2 class="adminCenter">Connected users:</h2>
+        <ul class="connectedUsers-ul">
+          <li class="listHeader">
+            <div class="taskName"><h3>Name</h3></div>
+            <div class="taskOrder"><h3>Story points</h3></div>
+          </li>
           <ConnectedUsers
             v-for="{ id, name, storyPoints } in connectedUsers"
             :key="id"
@@ -44,7 +49,7 @@
             :story-points="storyPoints"
           />
         </ul>
-        <span>Avarage Story Point: {{ averageNumber }}</span>
+        <span class="average-result">Avarage Story Point: {{ averageNumber }}</span>
       </div>
       <AnsweredTasks />
     </div>
@@ -56,17 +61,36 @@
 .connectedUsers-container {
   display: flex;
   flex-direction: column;
-  width: 40vw;
+  width: 30vw;
   padding: 20px;
-  border: 1px solid blue;
+  background-color: #06928e;
+  border-radius: 0.5rem;
+}
+
+.connectedUsers-ul {
+  padding: 0;
 }
 
 .tasksContainer {
   display: flex;
   justify-content: space-around;
+  max-width: 95vw;
+  gap: 1.5rem;
+  margin: auto;
+  margin-top: 4rem;
 }
 
 .admin {
-  color: white;
+  color: #060C0C;
+}
+
+.average-result {
+  background-color: #F9F7F5;
+  padding: 0.8rem;
+  font-size: 1.2rem;
+  width: 90%;
+  margin: auto;
+  border-radius: 0.2rem;
+  margin-bottom: 0;
 }
 </style>

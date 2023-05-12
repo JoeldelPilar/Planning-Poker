@@ -48,16 +48,15 @@ function connectUser() {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding-block: 5rem;
-  padding-inline: 3rem;
+  padding-block: 4rem;
+  padding-inline: 5rem;
   border: none;
   border-radius: 1rem 1rem 0rem 1rem;
   background-color: #06928e;
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.219);
 }
 h1 {
-  position: absolute;
-  top: 2rem;
+  font-size: 2.4rem;
   margin-inline: 0 auto;
   width: fit-content;
 }
@@ -71,8 +70,17 @@ form {
   flex-direction: column;
 }
 
+input {
+    padding: 0.9rem 2rem;
+    border: none;
+    border-radius: 0.2rem;
+    background-color: #F9F7F5;
+  }
+
 button {
-  padding-block: 0.25rem;
+  padding: 15px 50px;
+  margin: auto;
+  margin-top: 0.9rem;
 }
 
 button:hover {

@@ -43,11 +43,33 @@
   </div>
 </template>
   
-<style>
+<style scoped>
   .addTaskForm {
     display: flex;
     align-items: center;
     margin: 20px;
+  }
+
+  button {
+    background-color: #F9F7F5;
+    border: none;
+    padding: 0.4rem;
+    border-radius: 0.2rem;
+    margin-left: 0.4rem;
+  }
+
+  button:hover {
+    background-color: lightcyan;
+    transition: all 0.2s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 10px 25px;
+    cursor: pointer;
+  }
+
+  input {
+    padding: 0.4rem 1.5rem;
+    border: none;
+    border-radius: 0.2rem;
+    background-color: #F9F7F5;
   }
 
   .visually-hidden {

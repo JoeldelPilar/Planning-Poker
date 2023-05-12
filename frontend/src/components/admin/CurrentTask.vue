@@ -52,7 +52,7 @@
 
 <template>
   <div class="currentTasksContainer">
-    <h2>Current task:</h2>
+    <h2 class="adminCenter">Current task:</h2>
     <div v-if="nextTask">
       <div v-if="!showResult">
         <h3>{{ nextTask.task }}</h3>
@@ -63,7 +63,7 @@
           <button :class="{ activeOption: selectedStoryPoints === 8 }" @click="setStoryPoints(8)">8</button>
           <button :class="{ activeOption: selectedStoryPoints === 0 }" @click="setStoryPoints(0)">?</button>
         </div>
-        <button @click="saveStoryPoints" :disabled="disabledButton === true">Save</button>
+        <button class="save-btn" @click="saveStoryPoints" :disabled="disabledButton === true">Save</button>
       </div>
       <div v-if="showResult">
         <p v-if="selectedStoryPoints !== 0">Your vote has been saved</p>
@@ -76,12 +76,23 @@
   </div>
 </template>
 
-<style>
+<style scoped>
+
+  h2 {
+    font-size: 2.2rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+  
   .currentTasksContainer {
     margin: 20px auto;
     padding: 20px;
     width: 40vw;
-    border: 1px solid red;
+    background-color: #06928e;
+    border-radius: 0.5rem;
     text-align: center;
   }
 
@@ -90,9 +101,29 @@
     gap: 10px;
     justify-content: center;
     margin: 10px;
+    padding: 20px
   }
 
-  .activeOption {
-    background-color: #A6F4FF;
+  button {
+    padding: 35px 35px;
+    cursor: pointer;
   }
+
+  button:hover {
+    transition: all 0.2s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 10px 25px;
+    cursor: pointer;
+    margin-top: -5px;
+  }
+
+  .save-btn {
+    padding: 10px 65px;
+    font-size: 1.5rem;
+  }
+
+  .save-btn:hover {
+    margin-top: 0;
+    background-color: lightcyan;
+  }
+
 </style>

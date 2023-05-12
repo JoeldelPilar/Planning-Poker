@@ -76,29 +76,30 @@
 </template>
 
 <style scoped>
-.voting-stats-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.previous-container {
+    .voting-stats-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 80px 0 30px 0;
+  }
+  .previous-container {
   margin-inline-start: 30px;
   width: 400px;
   /* height: 50px; */
-  background-color: antiquewhite;
   padding-block: 10px;
   padding-inline: 50px;
 }
-.task-container {
-  margin: auto;
-  max-width: 300px;
-  padding: 5px 20px;
-  border-radius: 10px;
-  background-color: rgb(255, 255, 255);
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  text-align: center;
-}
+  .task-container {
+    margin: auto;
+    margin-top: 100px;
+    min-height: 50px;
+    max-width: 600px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: #F9F7F5;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    text-align: center;
+  }
 
 .cards-container {
   padding: 20px;

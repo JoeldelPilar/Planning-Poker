@@ -14,14 +14,17 @@ defineProps({
 </script>
 
 <style scoped>
+
 li {
   list-style: none;
-  background-color: white;
+  /* background-color: #F9F7F5; */
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
   padding: 10px;
+  margin: auto;
   border-bottom: 2px solid whitesmoke;
-  color: black;
+  border-radius: 0.2rem;
+  font-size: 1.1rem;
 }
 </style>

@@ -26,12 +26,26 @@ socket.on('votingResults', (results) => {
 
 <style scoped>
 .previous-task-component-container {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #06928e;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  font-size: 1.2rem;
+  max-width: 350px;
+  border-radius: 10px;
+  margin-left: 80px;
+  margin-top: 10px;
+  padding: 10px;
 }
 
 h3 {
   letter-spacing: 1.5px;
+  font-size: 1.5rem;
   font-weight: 700;
+  margin-bottom: 10px;
+  text-decoration: underline;
 }
 
 .previous-task-result {
