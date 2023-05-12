@@ -18,3 +18,5 @@ Vi hade även plannering för vår demo.
 ### Tittie
 - Igår gjorde jag designen för sidan så att den blev lite mer enhetlig och fick ett trevligare intryck. I dagsläget är den dock inte helt responsiv och fungerar endast för lite större skärmar. Så det är något jag ska arbeta vidare på. 
 - Idag ska vi ha retro och review och sen är det demo för klassen. 
+
+![bild](https://github.com/Medieinstitutet/fed22d-agila-planning-poker-expedit/assets/103323456/ec7c3eda-9908-45fa-800e-67fbc510fb06)
