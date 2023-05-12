@@ -14,7 +14,6 @@ defineProps({
 </script>
 
 <style scoped>
-
 li {
   list-style: none;
   /* background-color: #F9F7F5; */

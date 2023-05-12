@@ -1,92 +1,96 @@
 <script setup lang="ts">
-  import { socket } from '@/socket';
-  import { ref, watchEffect } from 'vue';
+import { socket } from '@/socket'
+import { ref, watchEffect } from 'vue'
 
-  interface Task {
-    _id: string;
-    task: string;
-    storyPoints: number;
-    deleted: boolean;
+interface Task {
+  _id: string
+  task: string
+  storyPoints: number
+  deleted: boolean
+}
+
+const tasksArray = ref<Task[]>([])
+const disabledButton = ref(false)
+
+watchEffect(() => {
+  const ul = document.querySelector('.newTasks')
+  if (ul) {
+    ul.innerHTML = ul.innerHTML
   }
+})
 
-  const tasksArray = ref<Task[]>([]);
-  const disabledButton = ref(false)
+function fetchTasks() {
+  fetch('http://localhost:3000/tasks')
+    .then((response) => response.json())
+    .then((tasks) => {
+      const filteredTasks = tasks.filter(
+        (task: any) => task.storyPoints === 0 && task.deleted === false
+      )
 
-  watchEffect(() => {
-    const ul = document.querySelector('.newTasks');
-    if (ul) {
-      ul.innerHTML = ul.innerHTML;
-    }
-  });
+      const taskOrder = JSON.parse(localStorage.getItem('taskOrder') || '[]')
 
-  function fetchTasks() {
-    fetch('http://localhost:3000/tasks')
-    .then(response => response.json())
-    .then(tasks => {
-      const filteredTasks = tasks.filter((task: any) => task.storyPoints === 0 && task.deleted === false);
+      const sortedTasks = taskOrder
+        .map((taskId: string) => {
+          const task = filteredTasks.find((task: Task) => task._id === taskId)
+          return task
+        })
+        .filter(Boolean)
 
-      const taskOrder = JSON.parse(localStorage.getItem('taskOrder') || '[]');
+      const newTask = filteredTasks.filter((task: Task) => !sortedTasks.includes(task))
+      sortedTasks.push(...newTask)
 
-      const sortedTasks = taskOrder.map((taskId: string) => {
-        const task = filteredTasks.find((task: Task) => task._id === taskId);
-        return task;
-      }).filter(Boolean);
+      tasksArray.value = sortedTasks
 
-      const newTask = filteredTasks.filter((task: Task) => !sortedTasks.includes(task));
-      sortedTasks.push(...newTask);
-
-      tasksArray.value = sortedTasks;
-
-      localStorage.setItem('taskOrder', JSON.stringify(sortedTasks.map((task: Task) => task._id)));
+      localStorage.setItem('taskOrder', JSON.stringify(sortedTasks.map((task: Task) => task._id)))
     })
-    .catch(error => {
-      console.error('Error fetching tasks:', error);
-    });
-  }
+    .catch((error) => {
+      console.error('Error fetching tasks:', error)
+    })
+}
 
-  function moveTaskUp(index: number) {
-    const task = tasksArray.value[index];
-    tasksArray.value[index] = tasksArray.value[index - 1];
-    tasksArray.value[index - 1] = task;
-    localStorage.setItem('taskOrder', JSON.stringify(tasksArray.value.map((task: Task) => task._id)));
-  }
+function moveTaskUp(index: number) {
+  const task = tasksArray.value[index]
+  tasksArray.value[index] = tasksArray.value[index - 1]
+  tasksArray.value[index - 1] = task
+  localStorage.setItem('taskOrder', JSON.stringify(tasksArray.value.map((task: Task) => task._id)))
+}
 
-  function moveTaskDown(index: number) {
-    const task = tasksArray.value[index];
-    tasksArray.value[index] = tasksArray.value[index + 1];
-    tasksArray.value[index + 1] = task;
-    localStorage.setItem('taskOrder', JSON.stringify(tasksArray.value.map((task: Task) => task._id)));
-  }
+function moveTaskDown(index: number) {
+  const task = tasksArray.value[index]
+  tasksArray.value[index] = tasksArray.value[index + 1]
+  tasksArray.value[index + 1] = task
+  localStorage.setItem('taskOrder', JSON.stringify(tasksArray.value.map((task: Task) => task._id)))
+}
 
-  function displayNextTask() {
-    socket.emit('nextTask', tasksArray.value[0]);
-    disabledButton.value = true;
-  }
+function displayNextTask() {
+  socket.emit('nextTask', tasksArray.value[0])
+  disabledButton.value = true
+}
 
-  socket.on('displayNextTask', () => {
-    tasksArray.value.splice(0, 1);
-  })
+socket.on('displayNextTask', () => {
+  tasksArray.value.splice(0, 1)
+})
 
-  socket.on('returnQuestionToList', (task: Task) => {
-    const taskToMove = task;
-    tasksArray.value.push(taskToMove);
-    localStorage.setItem('taskOrder', JSON.stringify(tasksArray.value.map((t: Task) => t._id)));
-  })
+socket.on('returnQuestionToList', (task: Task) => {
+  const taskToMove = task
+  tasksArray.value.push(taskToMove)
+  localStorage.setItem('taskOrder', JSON.stringify(tasksArray.value.map((t: Task) => t._id)))
+})
 
-  socket.on('updateList', () => {
-    fetchTasks();
-  });
+socket.on('updateList', () => {
+  fetchTasks()
+})
 
-  socket.on('clearNewTasks', () => {
-    tasksArray.value = [];
-    localStorage.removeItem('taskOrder');
-  })
+socket.on('clearNewTasks', () => {
+  tasksArray.value = []
+  localStorage.removeItem('taskOrder')
+})
 
-  socket.on('votingResults', () => {
-    disabledButton.value = false;
-  })
+socket.on('votingResults', () => {
+  disabledButton.value = false
+})
 
-  fetchTasks();
+fetchTasks()
 </script>
 
 <template>
@@ -111,74 +115,77 @@
       </li>
     </ul>
     <div class="adminCenter">
-      <button @click="displayNextTask" class="nextTaskButton" :disabled="disabledButton === true">Display next task</button>
+      <button @click="displayNextTask" class="nextTaskButton" :disabled="disabledButton === true">
+        Display next task
+      </button>
     </div>
   </div>
 </template>
 
 <style>
-  h3 {
-    font-size: 1.3rem;
-  }
-  .unansweredTasksContainer {
-    width: 40vw;
-    padding: 20px;
-    background-color: #06928e;
-    border-radius: 0.5rem;
-  }
+h3 {
+  font-size: 1.3rem;
+}
+.unansweredTasksContainer {
+  width: 40vw;
+  padding: 20px;
+  background-color: #06928e;
+  border-radius: 0.5rem;
+}
 
-  .adminCenter {
-    text-align: center;
-    text-decoration: underline;
-    font-size: 1.8rem;
-  }
+.adminCenter {
+  text-align: center;
+  text-decoration: underline;
+  font-size: 1.8rem;
+}
 
-  .newTasks {
-    padding-left: 0;
-  }
+.newTasks {
+  padding-left: 0;
+}
 
-  .listHeader {
-    font-weight: bold;
-  }
+.listHeader {
+  font-weight: bold;
+}
 
-  .unansweredTask, .listHeader {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: center;
-    padding: 10px;
-    border-bottom: 2px solid whitesmoke;
-  }
+.unansweredTask,
+.listHeader {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 2px solid whitesmoke;
+}
 
-  .taskName {
-    grid-column: 1;
-    font-size: 1.2rem;
-  }
+.taskName {
+  grid-column: 1;
+  font-size: 1.2rem;
+}
 
-  .taskOrder {
-    grid-column: 2;
-    text-align: right;
-  }
+.taskOrder {
+  grid-column: 2;
+  text-align: right;
+}
 
-  .taskOrder button {
-    margin: 0px 10px;
-    cursor: pointer;
-  }
+.taskOrder button {
+  margin: 0px 10px;
+  cursor: pointer;
+}
 
-  .nextTaskButton {
-    margin: auto;
-    margin-bottom: 0;
-    padding: 0.8rem;
-    cursor: pointer;
-    font-size: 1.2rem;
-  }
+.nextTaskButton {
+  margin: auto;
+  margin-bottom: 0;
+  padding: 0.8rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
 
-  .taskOrder button:hover {
-    background-color: lightcyan;
-  }
+.taskOrder button:hover {
+  background-color: lightcyan;
+}
 
-  .nextTaskButton:hover {
-    background-color: lightcyan;
-    transition: all 0.2s ease-in-out;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 10px 25px;
-  }
+.nextTaskButton:hover {
+  background-color: lightcyan;
+  transition: all 0.2s ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 10px 25px;
+}
 </style>

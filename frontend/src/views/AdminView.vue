@@ -1,31 +1,31 @@
 <script setup lang="ts">
-  import NewTask from '../components/admin/NewTask.vue';
-  import CurrentTask from '../components/admin/CurrentTask.vue';
-  import UnansweredTasks from '../components/admin/UnansweredTasks.vue';
-  import AnsweredTasks from '../components/admin/AnsweredTasks.vue';
-  import EndSession from '@/components/admin/EndSession.vue';
-  import ConnectedUsers from '@/components/admin/ConnectedUsers.vue';
-  import { userState } from '@/sockets/userSocket';
-  import { ref, watchEffect } from 'vue';
-  import { socket } from '@/socket';
+import NewTask from '../components/admin/NewTask.vue'
+import CurrentTask from '../components/admin/CurrentTask.vue'
+import UnansweredTasks from '../components/admin/UnansweredTasks.vue'
+import AnsweredTasks from '../components/admin/AnsweredTasks.vue'
+import EndSession from '@/components/admin/EndSession.vue'
+import ConnectedUsers from '@/components/admin/ConnectedUsers.vue'
+import { userState } from '@/sockets/userSocket'
+import { ref, watchEffect } from 'vue'
+import { socket } from '@/socket'
 
-  const connectedUsers = ref(userState.users);
+const connectedUsers = ref(userState.users)
 
-  watchEffect(() => {
-    connectedUsers.value = userState.users;
-  });
+watchEffect(() => {
+  connectedUsers.value = userState.users
+})
 
-  let averageNumber = ref<number | null>(null);
+let averageNumber = ref<number | null>(null)
 
-  socket.on('average', (average: number) => {
-    console.log(`Medelvärdet är ${average}`);
-    averageNumber.value = average;
-  });
+socket.on('average', (average: number) => {
+  console.log(`Medelvärdet är ${average}`)
+  averageNumber.value = average
+})
 
-  socket.on('redirectToStartingpage', (startingpage) => {
-    window.location.href = startingpage;
-    localStorage.removeItem('user');
-  });
+socket.on('redirectToStartingpage', (startingpage) => {
+  window.location.href = startingpage
+  localStorage.removeItem('user')
+})
 </script>
 
 <template>
@@ -80,11 +80,11 @@
 }
 
 .admin {
-  color: #060C0C;
+  color: #060c0c;
 }
 
 .average-result {
-  background-color: #F9F7F5;
+  background-color: #f9f7f5;
   padding: 0.8rem;
   font-size: 1.2rem;
   width: 90%;

@@ -9,7 +9,7 @@ const fibonacci = defineProps({
 })
 let vote = null
 
-  function readCardValue() {
+function readCardValue() {
   console.log(fibonacci.fibonacciValue)
   vote = fibonacci.fibonacciValue
   console.log('vote', vote)
@@ -33,7 +33,7 @@ button {
   width: 150px;
   height: 200px;
   border-radius: 10px;
-  background-color: #F9F7F5;
+  background-color: #f9f7f5;
   list-style: none;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;

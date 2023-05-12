@@ -1,17 +1,17 @@
 <script setup lang="ts">
-  import { socket } from '@/socket';
-  import { ref } from 'vue';
+import { socket } from '@/socket'
+import { ref } from 'vue'
 
-  interface Task {
-    taskDescription: string;
-    storyPoints: number;
-  }
+interface Task {
+  taskDescription: string
+  storyPoints: number
+}
 
-  const votingResults = ref<Task[]>([]);
+const votingResults = ref<Task[]>([])
 
-  socket.on('votingResults', (results) => {
-    votingResults.value = results;
-  });
+socket.on('votingResults', (results) => {
+  votingResults.value = results
+})
 </script>
 
 <template>
@@ -35,22 +35,22 @@
 </template>
 
 <style>
-  .answeredTasksContainer {
-    width: 40vw;
-    padding: 20px;
-    background-color: #06928e;
-    border-radius: 0.5rem;
-  }
+.answeredTasksContainer {
+  width: 40vw;
+  padding: 20px;
+  background-color: #06928e;
+  border-radius: 0.5rem;
+}
 
-  .votingList {
-    padding-left: 0;
-  }
-  
-  .votingResult {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: center;
-    padding: 10px;
-    border-bottom: 2px solid whitesmoke;
-  }
+.votingList {
+  padding-left: 0;
+}
+
+.votingResult {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 2px solid whitesmoke;
+}
 </style>

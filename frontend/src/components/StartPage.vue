@@ -71,11 +71,11 @@ form {
 }
 
 input {
-    padding: 0.9rem 2rem;
-    border: none;
-    border-radius: 0.2rem;
-    background-color: #F9F7F5;
-  }
+  padding: 0.9rem 2rem;
+  border: none;
+  border-radius: 0.2rem;
+  background-color: #f9f7f5;
+}
 
 button {
   padding: 15px 50px;

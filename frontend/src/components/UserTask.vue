@@ -1,16 +1,15 @@
 <script setup lang="ts">
-    defineProps ({
-        task: String
-    })
-
+defineProps({
+  task: String
+})
 </script>
 
 <template>
-    <p>{{ task }}</p>
+  <p>{{ task }}</p>
 </template>
 
 <style scoped>
-  p {
-    font-size: 2rem;
-  }
+p {
+  font-size: 2rem;
+}
 </style>
