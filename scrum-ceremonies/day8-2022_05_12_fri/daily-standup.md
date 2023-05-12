@@ -4,6 +4,10 @@
 > Yesterday I…, today I will…, I need help with…, I'm stuck with…, TIL…
 
 ### Joel del Pilar  
+- Igår arbetade jag färdigt den uppgift jag höll på med, det var inom tidspannet som plannerat. Jag fortsatte sedan med att skriva ner vår dokumentation och färdigställa den.
+Vi hade även plannering för vår demo.
+- Idag kommer vi ha en demo för vårt projekt samt att vi kommer avsluta sprinten med en retro.
+- Generell inlärning. Har lärt mig hur jag kan arbeta på ett effektivare sätt än jag gjort innan.
 
 ### Liza Grapensparr
 
