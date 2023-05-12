@@ -4,7 +4,6 @@
   import UnansweredTasks from '../components/admin/UnansweredTasks.vue';
   import AnsweredTasks from '../components/admin/AnsweredTasks.vue';
   import EndSession from '@/components/admin/EndSession.vue';
-  import AverageResult from '@/components/AverageResult.vue';
   import ConnectedUsers from '@/components/admin/ConnectedUsers.vue';
   import { userState } from '@/sockets/userSocket';
   import { ref, watchEffect } from 'vue';
