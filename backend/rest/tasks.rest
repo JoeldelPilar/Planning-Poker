@@ -1,0 +1,12 @@
+GET http://localhost:3000/tasks
+
+###
+
+POST http://localhost:3000/tasks/add
+Content-Type: application/json
+
+{
+    "task": "Test",
+    "storyPoints": 1,
+    "deleted": true
+}
